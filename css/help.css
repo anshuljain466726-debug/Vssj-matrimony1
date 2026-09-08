@@ -1,0 +1,144 @@
+/*==================================================
+        SSJ MATRIMONY
+        HELP.CSS — Premium look for Help & Support page
+==================================================*/
+
+/*----- Top intro card -----*/
+
+.static-page .card{
+    padding:44px 36px;
+    margin-bottom:34px;
+    border:1px solid var(--border,#E7D9BB);
+}
+
+.static-page .card h2{
+    color:var(--primary-dark,#7A0E3D);
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.static-page .card > p{
+    color:var(--gray,#7C6E5E);
+    font-size:15.5px;
+}
+
+/*----- FAQ — numbered point list (1, 2, 3...) with circle badges -----*/
+
+.static-page .faq{
+    padding:10px 0 60px;
+}
+
+.static-page .faq-box{
+    background:none;
+    border:none;
+    border-bottom:1px solid var(--border,#E7D9BB);
+    border-radius:0;
+    box-shadow:none;
+    padding:26px 0;
+    margin-bottom:0;
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    counter-increment:faq-count;
+}
+
+.static-page .faq{
+    counter-reset:faq-count;
+}
+
+.static-page .faq-box:first-child{
+    padding-top:0;
+}
+
+.static-page .faq-box:last-child{
+    border-bottom:none;
+    padding-bottom:0;
+}
+
+.static-page .faq-box:hover{
+    transform:none;
+    box-shadow:none;
+}
+
+.static-page .faq-box::before{
+    content:counter(faq-count);
+    flex-shrink:0;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:var(--gradient,linear-gradient(135deg,#C2185B,#7A0E3D));
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    font-weight:700;
+    font-family:var(--font,'Hind',sans-serif);
+}
+
+.static-page .faq-box h3{
+    font-size:18px;
+    margin-bottom:8px;
+    padding-left:0;
+}
+
+.static-page .faq-box h3::before{
+    content:none;
+}
+
+.static-page .faq-box p{
+    margin-top:0;
+    padding-left:0;
+    font-size:15px;
+    line-height:1.75;
+}
+
+@media(max-width:576px){
+    .static-page .faq-box{
+        gap:14px;
+    }
+    .static-page .faq-box::before{
+        width:32px;
+        height:32px;
+        font-size:14px;
+    }
+}
+
+/*----- Contact info table — gold/pink header -----*/
+
+.static-page .admin-table th{
+    background:var(--gradient,linear-gradient(135deg,#C2185B,#7A0E3D));
+    font-weight:600;
+    letter-spacing:.3px;
+}
+
+.static-page .admin-table{
+    border:1px solid var(--border,#E7D9BB);
+}
+
+/*----- Quick links grid — slightly richer premium card -----*/
+
+.static-page .dashboard-card{
+    text-align:left;
+    padding:24px 26px;
+    font-weight:600;
+    color:var(--primary-dark,#7A0E3D);
+    font-size:15.5px;
+}
+
+.static-page .dashboard-card a{
+    color:var(--primary-dark,#7A0E3D);
+}
+
+.static-page .dashboard-card:hover{
+    border-left:4px solid var(--gold,#B8863B);
+}
+
+@media(max-width:576px){
+    .static-page .card{
+        padding:28px 22px;
+    }
+    .static-page .faq-box{
+        padding:14px 0;
+    }
+}

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>रुचियाँ | SSJ Matrimony</title>
+
+<link rel="stylesheet"
+href="../css/variables.css">
+
+<link rel="stylesheet"
+href="../css/member-dashboard.css">
+
+<link rel="stylesheet"
+href="../css/forms-compact.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Hind:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+.interest-tabs{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.interest-tab-btn{
+    padding:9px 22px;
+    border:1px solid var(--border,#e5e5e5);
+    background:#fff;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    color:var(--dark,#333);
+    transition:.3s;
+}
+
+.interest-tab-btn.active{
+    background:var(--gradient,linear-gradient(135deg,#C2185B,#3D2645));
+    color:#fff;
+    border-color:transparent;
+}
+
+.interest-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:18px;
+}
+
+.interest-card{
+    background:#fff;
+    border-radius:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
+    overflow:hidden;
+    text-align:center;
+    padding-bottom:14px;
+}
+
+.interest-card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    background:#f1f1f1;
+}
+
+.interest-card h3{
+    font-size:15px;
+    margin:10px 0 2px;
+}
+
+.interest-card p{
+    font-size:12px;
+    color:#777;
+    margin-bottom:8px;
+}
+
+.interest-status{
+    display:inline-block;
+    padding:3px 12px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.interest-status.Pending{ background:#fff3cd; color:#856404; }
+.interest-status.Accepted{ background:#d4edda; color:#155724; }
+.interest-status.Rejected{ background:#f8d7da; color:#721c24; }
+
+.interest-actions{
+    display:flex;
+    gap:8px;
+    justify-content:center;
+}
+
+.interest-actions button{
+    padding:7px 16px;
+    border:none;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.accept-btn{ background:#1f9d55; color:#fff; }
+.reject-btn{ background:#e5484d; color:#fff; }
+
+.interest-empty{
+    text-align:center;
+    color:#888;
+    padding:40px 0;
+    grid-column:1/-1;
+}
+
+</style>
+
+<link href="../css/lightbox.css" rel="stylesheet"/>
+<link href="../css/mobile-theme.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<!--================ SIDEBAR ================-->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<img src="../images/logo.png" alt="SSJ Matrimony Logo">
+
+<h2>SSJ</h2>
+
+<h2><p>Matrimony</p></h2>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="user-dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>डैशबोर्ड</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+<span>मेरी प्रोफ़ाइल</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="register.html">
+
+<i class="fa-solid fa-user-pen"></i>
+
+<span>प्रोफ़ाइल संपादित करें</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="dashboard.html#gallerySection">
+
+<i class="fa-solid fa-images"></i>
+
+<span>फोटो गैलरी</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="search.html">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<span>सदस्य खोजें</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="interest.html?tab=received">
+
+<i class="fa-solid fa-heart"></i>
+
+<span>रुचि प्राप्त</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="interest.html?tab=sent">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+<span>भेजी गई रुचियाँ</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html?print=1" target="_blank">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+<span>PDF बायोडाटा</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="dashboard.html#settingsSection">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>सेटिंग्स</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html" id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>लॉगआउट</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!--================ MAIN ================-->
+
+<main class="main">
+
+<section class="status-box">
+
+<h2>
+
+<i class="fa-solid fa-heart"></i>
+
+रुचियाँ (Interests)
+
+</h2>
+
+<div class="interest-tabs">
+
+<button class="interest-tab-btn" id="receivedTabBtn" onclick="switchInterestTab('received')">
+प्राप्त रुचियाँ
+</button>
+
+<button class="interest-tab-btn" id="sentTabBtn" onclick="switchInterestTab('sent')">
+भेजी गई रुचियाँ
+</button>
+
+</div>
+
+<div class="interest-grid" id="interestGrid">
+
+<p class="interest-empty">लोड हो रहा है...</p>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="../js/firebase-init.js"></script>
+<script src="../js/ssj-data.js"></script>
+<script src="../js/interest.js"></script>
+
+<script src="../js/lightbox.js"></script>
+</body>
+
+</html>

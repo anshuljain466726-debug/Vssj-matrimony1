@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Dashboard | SSJ Matrimony</title>
+
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/forms-compact.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="../css/lightbox.css" rel="stylesheet"/>
+<link href="../css/mobile-theme.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<!-- ==========================================
+                TOP BAR
+========================================== -->
+
+<div class="top-bar">
+
+    <div class="container">
+
+        <div class="top-bar-item">
+            <i class="fas fa-phone-volume"></i>
+            <div>
+                <strong>सहायता चाहिए?</strong>
+                <span>+91 97852 29081</span>
+            </div>
+        </div>
+
+        <div class="top-bar-item">
+            <i class="fas fa-location-dot"></i>
+            <div>
+                <strong>सदस्य पंजीकरण</strong>
+                <span>24x7 सहायता उपलब्ध</span>
+            </div>
+        </div>
+
+        <div class="top-bar-secure">
+            <i class="fas fa-shield-halved"></i>
+            <div>
+                <strong>100% सुरक्षित</strong>
+                <span>आपकी जानकारी हमारे लिए सुरक्षित है</span>
+            </div>
+        </div>
+
+        <div class="top-bar-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+                <strong>ई-मेल करें</strong>
+                <span>info@ssjmatrimony.com</span>
+            </div>
+        </div>
+
+        <div class="top-bar-item">
+            <strong>हमारे साथ जुड़ें</strong>
+            <div class="top-bar-social">
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/919785229081" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!--================ HEADER ================-->
+
+<header class="header">
+
+<div class="container">
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+
+<img src="../images/logo.png" alt="Logo">
+
+<div>
+
+<h2>SSJ Matrimony</h2>
+
+<span>सेठ-सेठिया (जैन) समाज</span>
+
+</div>
+
+</a>
+
+<ul class="menu">
+
+<li><a href="user-dashboard.html" class="active">Dashboard</a></li>
+
+<li><a href="search.html">Search</a></li>
+
+
+<li><a href="contact.html">Contact</a></li>
+
+<li><a href="login.html" id="navLogoutBtn">Logout</a></li>
+
+</ul>
+
+<div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+</nav>
+
+</div>
+
+</header>
+
+<!--================ DASHBOARD ================-->
+
+<section class="dashboard">
+
+<div class="container">
+
+<h1>
+
+👋 Welcome
+
+<span id="userName"></span>
+
+</h1>
+
+<p>
+
+Profile ID :
+
+<strong id="profileID"></strong>
+
+</p>
+
+</div>
+
+</section>
+
+<!--=========================================
+        उपयोगकर्ता प्रोफ़ाइल
+==========================================-->
+
+<section class="dashboard-section">
+
+    <div class="container">
+
+        <div class="dashboard-grid">
+
+            <!-- प्रोफ़ाइल कार्ड -->
+
+            <div class="profile-card">
+
+                <img id="profilePhoto"
+                     src="../images/user.png"
+                     alt="प्रोफ़ाइल फोटो">
+
+                <h2 id="userFullName">
+                    आपका नाम
+                </h2>
+
+                <p id="userProfession">
+                    आपका व्यवसाय
+                </p>
+
+                <span class="profile-id">
+
+                    प्रोफ़ाइल आईडी :
+                    <strong id="profileId"></strong>
+
+                </span>
+
+            </div>
+
+            <!-- व्यक्तिगत जानकारी -->
+
+            <div class="details-card">
+
+                <h2>व्यक्तिगत जानकारी</h2>
+
+                <table>
+
+                    <tr>
+                        <td>पिता का नाम</td>
+                        <td id="fatherName"></td>
+                    </tr>
+
+                    <tr>
+                        <td>आयु</td>
+                        <td id="age"></td>
+                    </tr>
+
+                    <tr>
+                        <td>मोबाइल नंबर</td>
+                        <td id="mobile"></td>
+                    </tr>
+
+                    <tr>
+                        <td>ईमेल</td>
+                        <td id="email"></td>
+                    </tr>
+
+                    <tr>
+                        <td>राज्य</td>
+                        <td id="state"></td>
+                    </tr>
+
+                    <tr>
+                        <td>शहर</td>
+                        <td id="city"></td>
+                    </tr>
+
+                    <tr>
+                        <td>गोत्र</td>
+                        <td id="gotra"></td>
+                    </tr>
+
+                    <tr>
+                        <td>शिक्षा</td>
+                        <td id="education"></td>
+                    </tr>
+
+                    <tr>
+                        <td>व्यवसाय</td>
+                        <td id="profession"></td>
+                    </tr>
+
+                </table>
+
+                <div class="dashboard-buttons">
+
+                    <a href="#" class="btn">
+                        ✏ प्रोफ़ाइल संपादित करें
+                    </a>
+
+                    <a href="#" class="btn">
+                        🔒 पासवर्ड बदलें
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- फोटो गैलरी -->
+
+            <div class="details-card" id="galleryCard">
+
+                <h2>📷 फोटो गैलरी</h2>
+
+                <div class="profile-gallery" id="profileGallery">
+                    <a href="edit-profile.html"><img src="../images/user.png" alt="फोटो 1"/></a>
+                    <a href="edit-profile.html"><img src="../images/user.png" alt="फोटो 2"/></a>
+                    <a href="edit-profile.html"><img src="../images/user.png" alt="फोटो 3"/></a>
+                    <a href="edit-profile.html"><img src="../images/user.png" alt="फोटो 4"/></a>
+                </div>
+
+                <p class="gallery-hint">फोटो जोड़ने या बदलने के लिए ऊपर किसी भी फोटो पर Click करें, या <a href="edit-profile.html">प्रोफ़ाइल संपादित करें</a></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================================
+        DASHBOARD STATUS
+==========================================-->
+
+<section class="dashboard-status">
+
+    <div class="container">
+
+        <div class="status-grid">
+
+            <div class="status-card">
+
+                <h3>🆔 प्रोफ़ाइल आईडी</h3>
+
+                <h2 id="cardProfileID">SSJ000000</h2>
+
+            </div>
+
+            <div class="status-card">
+
+                <h3>💎 सदस्यता</h3>
+
+                <h2 id="cardMembership">सामान्य</h2>
+
+            </div>
+
+            <div class="status-card">
+
+                <h3>❤️ प्रोफ़ाइल स्थिति</h3>
+
+                <h2>100%</h2>
+
+            </div>
+
+            <div class="status-card">
+
+                <h3>📅 पंजीकरण</h3>
+
+                <h2 id="cardDate">00/00/0000</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================================
+        प्राप्त अनुरोध
+==========================================-->
+
+<section class="dashboard-section">
+
+    <div class="container">
+
+        <div class="details-card">
+
+            <h2>❤️ प्राप्त वैवाहिक अनुरोध</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>नाम</th>
+
+                        <th>शहर</th>
+
+                        <th>आयु</th>
+
+                        <th>कार्य</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="receivedRequest">
+
+                    <tr>
+
+                        <td colspan="4" style="text-align:center">
+
+                            अभी कोई अनुरोध प्राप्त नहीं हुआ।
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================================
+        भेजे गए अनुरोध
+==========================================-->
+
+<section class="dashboard-section">
+
+    <div class="container">
+
+        <div class="dashboard-grid">
+
+            <!-- भेजे गए अनुरोध -->
+
+            <div class="details-card">
+
+                <h2>💌 भेजे गए अनुरोध</h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>नाम</th>
+
+                            <th>शहर</th>
+
+                            <th>स्थिति</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="sentRequest">
+
+                        <tr>
+
+                            <td colspan="3" style="text-align:center;">
+
+                                आपने अभी तक कोई अनुरोध नहीं भेजा।
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- पसंदीदा प्रोफ़ाइल -->
+
+            <div class="details-card">
+
+                <h2>⭐ पसंदीदा प्रोफ़ाइल</h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>नाम</th>
+
+                            <th>शहर</th>
+
+                            <th>आयु</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="favoriteProfile">
+
+                        <tr>
+
+                            <td colspan="3" style="text-align:center;">
+
+                                अभी कोई पसंदीदा प्रोफ़ाइल नहीं है।
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<script src="../js/lightbox.js"></script>
+<style>
+.profile-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.profile-gallery a{display:block;}
+.profile-gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;border:2px solid var(--border,#E7D9BB);cursor:pointer;transition:var(--transition,.2s);}
+.profile-gallery img:hover{border-color:var(--gold,#B8863B);transform:translateY(-2px);}
+.gallery-hint{margin-top:12px;font-size:13px;color:var(--gray,#7C6E5E);}
+.gallery-hint a{color:var(--primary,#C2185B);font-weight:600;}
+@media (max-width:640px){ .profile-gallery{grid-template-columns:repeat(2,1fr);} }
+</style>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="../js/firebase-init.js"></script>
+<script src="../js/ssj-data.js"></script>
+<script>
+(function(){
+    var stored = null;
+    try{ stored = JSON.parse(localStorage.getItem('ssjProfile') || 'null'); }catch(err){}
+
+    if(!stored){
+        // No profile found — send user to login instead of an empty dashboard
+        window.location.href = 'login.html';
+        return;
+    }
+
+    function setText(id, value){
+        var el = document.getElementById(id);
+        if(el){ el.textContent = value || '—'; }
+    }
+
+    var fullName = ((stored.firstName || '') + ' ' + (stored.lastName || '')).trim();
+    setText('userFullName', fullName || 'आपका नाम');
+    setText('userName', fullName || 'सदस्य');
+    setText('profileID', stored.profileId || 'SSJ000000');
+    setText('userProfession', stored.profession || 'आपका व्यवसाय');
+    setText('profileId', stored.profileId || 'SSJ000000');
+    setText('cardProfileID', stored.profileId || 'SSJ000000');
+    setText('cardMembership', 'सामान्य');
+    setText('cardDate', stored.registeredOn || '—');
+
+    setText('fatherName', stored.fatherName);
+    setText('age', stored.age);
+    setText('mobile', stored.mobile);
+    setText('email', stored.email || 'उपलब्ध नहीं');
+    setText('state', stored.state);
+    setText('city', stored.city);
+    setText('gotra', stored.fatherGotra || stored.gotra);
+    setText('education', stored.education);
+    setText('profession', stored.profession);
+
+    var photoEl = document.getElementById('profilePhoto');
+    if(photoEl && stored.photo){ photoEl.src = stored.photo; }
+
+    // ---- Received / Sent Interest requests (real data from Firestore) ----
+    function fillRequestTables(){
+        if(typeof SSJ === 'undefined' || !SSJ.cloud) return;
+
+        function memberRow(m, extra){
+            var name = ((m.firstName||'') + ' ' + (m.lastName||'')).trim() || m.profileId;
+            return '<tr><td>'+name+'</td><td>'+(m.city||'-')+'</td>'+extra+'</tr>';
+        }
+
+        SSJ.cloud.getReceivedInterests(stored.profileId).then(function(entries){
+            var tbody = document.getElementById('receivedRequest');
+            if(!tbody || !entries || !entries.length) return;
+
+            Promise.all(entries.map(function(e){ return SSJ.cloud.getMember(e.fromProfileId); })).then(function(members){
+                var rows = '';
+                members.forEach(function(m, i){
+                    if(!m) return;
+                    rows += memberRow(m, '<td>'+(m.age||'-')+'</td><td>'+(m.profession||'-')+'</td>');
+                });
+                if(rows){
+                    tbody.innerHTML = rows + '<tr><td colspan="4" style="text-align:center;"><a href="interest.html">स्वीकार/अस्वीकार करने के लिए यहाँ क्लिक करें</a></td></tr>';
+                }
+            });
+        });
+
+        SSJ.cloud.getSentInterests(stored.profileId).then(function(entries){
+            var tbody = document.getElementById('sentRequest');
+            if(!tbody || !entries || !entries.length) return;
+
+            Promise.all(entries.map(function(e){ return SSJ.cloud.getMember(e.toProfileId).then(function(m){ return { m:m, status:e.status }; }); })).then(function(results){
+                var rows = '';
+                results.forEach(function(r){
+                    if(!r.m) return;
+                    rows += memberRow(r.m, '<td>'+(r.status||'Pending')+'</td>');
+                });
+                if(rows){ tbody.innerHTML = rows; }
+            });
+        });
+    }
+    fillRequestTables();
+
+    // ---- Photo gallery (up to 4) ----
+    var galleryImgs = document.querySelectorAll('#profileGallery img');
+    var galleryPhotos = (stored.photos && stored.photos.length) ? stored.photos : [];
+    galleryImgs.forEach(function(img, i){
+        if(galleryPhotos[i]){ img.src = galleryPhotos[i]; }
+    });
+
+    // ---- Edit Profile / Logout buttons ----
+    document.querySelectorAll('.dashboard-buttons a').forEach(function(a){
+        if(a.textContent.indexOf('संपादित') !== -1){
+            a.setAttribute('href', 'edit-profile.html');
+        }
+        if(a.textContent.indexOf('पासवर्ड बदलें') !== -1){
+            a.setAttribute('href', 'edit-profile.html#password');
+        }
+    });
+
+    var logoutBtn = document.getElementById('navLogoutBtn');
+    if(logoutBtn){
+        logoutBtn.addEventListener('click', function(){
+            try{ sessionStorage.removeItem('ssjLoggedIn'); }catch(err){}
+        });
+    }
+})();
+</script>
+</body>
+</html>

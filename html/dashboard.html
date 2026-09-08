@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>डैशबोर्ड | SSJ Matrimony</title>
+
+<link rel="stylesheet"
+href="../css/variables.css">
+
+<link rel="stylesheet"
+href="../css/member-dashboard.css">
+
+<link rel="stylesheet"
+href="../css/forms-compact.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Hind:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link href="../css/lightbox.css" rel="stylesheet"/>
+<link href="../css/mobile-theme.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<!--================ SIDEBAR ================-->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<img src="../images/logo.png" alt="SSJ Matrimony Logo">
+
+<h2>SSJ</h2>
+
+<h2><p>Matrimony</p></h2>
+
+</div>
+
+<ul>
+
+<li class="active">
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>डैशबोर्ड</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+<span>मेरी प्रोफ़ाइल</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="register.html">
+
+<i class="fa-solid fa-user-pen"></i>
+
+<span>प्रोफ़ाइल संपादित करें</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#gallerySection">
+
+<i class="fa-solid fa-images"></i>
+
+<span>फोटो गैलरी</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="search.html">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<span>सदस्य खोजें</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="interest.html?tab=received">
+
+<i class="fa-solid fa-heart"></i>
+
+<span>रुचि प्राप्त</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="interest.html?tab=sent">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+<span>भेजी गई रुचियाँ</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html?print=1" target="_blank">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+<span>PDF बायोडाटा</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#settingsSection">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>सेटिंग्स</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html" id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>लॉगआउट</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!--================ MAIN ================-->
+
+<div class="main">
+
+<header class="topbar">
+
+<div class="welcome">
+
+<h2>
+
+जय जिनेंद्र 
+
+<span id="memberName">
+
+सदस्य
+
+</span>
+
+👋
+
+</h2>
+
+<p>
+
+Shri Shri Mal Seth Sethiya Samaj Matrimony
+
+</p>
+
+</div>
+
+<div class="top-icons">
+
+<i class="fa-solid fa-bell"></i>
+
+<i class="fa-solid fa-envelope"></i>
+
+<img
+src="../images/user.png"
+class="profile-img" alt="मेरी फोटो">
+
+</div>
+
+</header>
+
+<!--================ PROFILE CARD ================-->
+
+<section class="profile-card">
+
+<div class="photo">
+
+<img
+id="profilePhoto"
+src="../images/user.png" alt="प्रोफ़ाइल फोटो">
+
+</div>
+
+<div class="details">
+
+<h2 id="name">
+
+पूरा नाम
+
+</h2>
+
+<p>
+
+सदस्य आईडी :
+
+<b id="memberID">
+
+SSMSS-2026-00001
+
+</b>
+
+</p>
+
+<p>
+
+आयु :
+
+<span id="age">
+
+25 वर्ष
+
+</span>
+
+</p>
+
+<p>
+
+शिक्षा :
+
+<span id="education">
+
+B.Com
+
+</span>
+
+</p>
+
+<p>
+
+व्यवसाय :
+
+<span id="occupation">
+
+Business
+
+</span>
+
+</p>
+
+<p>
+
+शहर :
+
+<span id="city">
+
+जयपुर
+
+</span>
+
+</p>
+
+<div class="btn-group">
+
+<button onclick="window.location.href='register.html'">
+
+<i class="fa-solid fa-user-pen"></i>
+
+संपादित करें
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+<!--================ DASHBOARD STATISTICS ================-->
+
+<section class="dashboard-cards">
+
+<div class="card">
+
+<i class="fa-solid fa-user-group"></i>
+
+<h3 id="totalVisitors">0</h3>
+
+<p>प्रोफ़ाइल विज़िट</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-heart"></i>
+
+<h3 id="interestReceived">0</h3>
+
+<p>प्राप्त रुचियाँ</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+<h3 id="interestSent">0</h3>
+
+<p>भेजी गई रुचियाँ</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-star"></i>
+
+<h3 id="shortlistCount">0</h3>
+
+<p>शॉर्टलिस्ट</p>
+
+</div>
+
+<div class="card premium">
+
+<i class="fa-solid fa-crown"></i>
+
+<h3>FREE</h3>
+
+<p>सदस्यता</p>
+
+</div>
+
+</section>
+
+
+
+<!--================ PHOTO GALLERY ================-->
+
+<section class="gallery-section" id="gallerySection">
+
+<div class="section-title">
+
+<h2>
+
+<i class="fa-solid fa-images"></i>
+
+मेरी फोटो गैलरी
+
+</h2>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+
+<img id="photo1"
+
+src="../images/user.png"
+
+alt="Photo-1">
+
+</div>
+
+<div class="gallery-item">
+
+<img id="photo2"
+
+src="../images/no-image.png"
+
+alt="Photo-2">
+
+</div>
+
+<div class="gallery-item">
+
+<img id="photo3"
+
+src="../images/no-image.png"
+
+alt="Photo-3">
+
+</div>
+
+<div class="gallery-item">
+
+<img id="photo4"
+
+src="../images/no-image.png"
+
+alt="Photo-4">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!--================ PROFILE STATUS ================-->
+
+<section class="status-box">
+
+<h2>
+
+<i class="fa-solid fa-chart-line"></i>
+
+प्रोफ़ाइल पूर्णता
+
+</h2>
+
+<div class="progress">
+
+<div class="progress-bar"
+
+id="profileProgress"
+
+style="width:0%;">
+
+0%
+
+</div>
+
+</div>
+
+<p>
+
+अपनी प्रोफ़ाइल 100% पूर्ण करें ताकि अधिक सदस्य आपकी प्रोफ़ाइल देख सकें।
+
+</p>
+
+</section>
+
+
+
+<!--================ RECENT ACTIVITY ================-->
+
+<section class="recent-activity">
+
+<div class="section-title">
+
+<h2>
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+हाल की गतिविधियाँ
+
+</h2>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>दिनांक</th>
+
+<th>गतिविधि</th>
+
+<th>स्थिति</th>
+
+</tr>
+
+</thead>
+
+<tbody id="activityTable">
+
+<tr>
+
+<td colspan="3">
+
+अभी तक कोई गतिविधि उपलब्ध नहीं है।
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!--================ SETTINGS ================-->
+
+<section class="status-box" id="settingsSection">
+
+<h2>
+
+<i class="fa-solid fa-gear"></i>
+
+सेटिंग्स
+
+</h2>
+
+<p>
+
+पासवर्ड भूल गए हैं? नीचे दिए गए लिंक से नया पासवर्ड सेट करें।
+
+</p>
+
+<a class="btn-primary" href="forgot-password.html" style="display:inline-block;text-decoration:none;">
+
+पासवर्ड भूल गए?
+
+</a>
+
+</section>
+
+<div class="status-box">
+
+<h2>
+<i class="fa-solid fa-crown"></i>
+सदस्यता अपग्रेड करें
+</h2>
+
+<div class="input-box">
+
+<label>सदस्यता योजना <span>*</span></label>
+
+<select id="membershipPlan" required>
+
+<option value="">सदस्यता चुनें</option>
+
+<option value="FREE">
+महिला सदस्य (निःशुल्क)
+</option>
+
+<option value="151">
+महिला सदस्य - 12 माह (₹151)
+</option>
+
+<option value="101">
+पुरुष सदस्य - 4 माह (₹101)
+</option>
+
+<option value="251">
+पुरुष सदस्य - 6 माह (₹251)
+</option>
+
+<option value="351">
+पुरुष सदस्य - 12 माह (₹351)
+</option>
+
+<option value="1200">
+पुरुष सदस्य - 18 माह (₹1000)
+</option>
+
+<option value="1000">
+पुरुष सदस्य - 3 वर्ष (₹1500)
+</option>
+
+<option value="3100">
+एडमिन (Lifetime) - ₹3100
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="../js/ssj-data.js"></script>
+<script src="../js/dashboard.js"></script>
+
+<script src="../js/lightbox.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+/*==================================================
+                FOOTER
+==================================================*/
+
+.footer{
+    background:var(--gradient);
+    color:#F6EAD6;
+    padding:14px 0 8px;
+    border-top:2px solid var(--gold);
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:16px;
+}
+
+.footer-box p{
+    color:#F0DCC6;
+    line-height:1.4;
+    font-size:13px;
+    margin:0 0 4px;
+}
+
+.footer-box:first-child h3{
+    font-family:var(--font-display);
+    font-weight:400;
+    color:#fff;
+    font-size:16px;
+    margin-bottom:3px;
+}
+
+.footer h3{
+    font-family:var(--font-display);
+    font-weight:400;
+    color:var(--gold-light);
+    margin-bottom:4px;
+    font-size:14px;
+}
+
+.footer h3 i{
+    color:var(--gold-light);
+    margin-right:6px;
+}
+
+.footer ul{
+    padding:0;
+    margin:0;
+}
+
+.footer ul li{
+    margin-bottom:2px;
+    list-style:none;
+}
+
+.footer ul li a{
+    color:#F0DCC6;
+    transition:.3s;
+}
+
+.footer ul li a i{
+    width:16px;
+    color:var(--gold-light);
+    margin-right:6px;
+}
+
+.footer ul li a:hover{
+    color:#fff;
+    padding-left:5px;
+}
+
+.footer-box p i{
+    width:16px;
+    color:var(--gold-light);
+    margin-right:6px;
+}
+
+.footer .copyright{
+    margin-top:0;
+    text-align:center;
+    color:#E4CBAE;
+    font-size:12px;
+}
+
+.social-links{
+    display:flex;
+    gap:8px;
+    margin-top:4px;
+}
+
+.social-links a{
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+    color:#F6EAD6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+    font-size:12px;
+}
+
+.social-links a:hover{
+    background:var(--gold);
+    color:var(--primary-dark);
+    transform:translateY(-3px);
+}
+
+.footer hr{
+    border:none;
+    border-top:1px solid rgba(232,206,148,.25);
+    margin-top:8px;
+}
+
+@media(max-width:991px){
+
+.footer-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(min-width:992px) and (max-width:1199px){
+
+.footer-grid{
+grid-template-columns:1.3fr 1fr 1fr 1fr;
+gap:12px;
+}
+
+}
+
+@media(max-width:576px){
+
+.footer-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+}

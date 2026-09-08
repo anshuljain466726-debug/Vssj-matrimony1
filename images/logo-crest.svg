@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3D27A"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#B8860B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- outer ring -->
+  <circle cx="60" cy="60" r="56" fill="#ffffff" stroke="url(#goldGrad)" stroke-width="3"/>
+  <circle cx="60" cy="60" r="49" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+
+  <!-- top crown flourish -->
+  <path d="M46 14 L52 24 L60 12 L68 24 L74 14 L70 30 L50 30 Z" fill="url(#goldGrad)"/>
+
+  <!-- monogram -->
+  <text x="60" y="70" font-family="Georgia, 'Times New Roman', serif" font-size="30"
+        font-weight="700" fill="#C2185B" text-anchor="middle">SSJ</text>
+
+  <!-- left flourish -->
+  <path d="M14 60 Q22 54 30 60 Q22 66 14 60 Z" fill="url(#goldGrad)"/>
+  <!-- right flourish -->
+  <path d="M106 60 Q98 54 90 60 Q98 66 106 60 Z" fill="url(#goldGrad)"/>
+
+  <!-- bottom scroll flourish -->
+  <path d="M32 92 Q60 106 88 92 Q60 100 32 92 Z" fill="url(#goldGrad)"/>
+</svg>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>प्रोफ़ाइल संपादित करें | SSJ Matrimony</title>
+
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/register.css">
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/forms-compact.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="../css/mobile-theme.css" rel="stylesheet"/>
+<style>
+.gallery-slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:16px;margin-top:14px;}
+.gallery-slot{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.gallery-preview{width:90px;height:90px;border-radius:10px;object-fit:cover;border:2px solid var(--border,#E7D9BB);background:#F6EFE1;}
+.gallery-choose{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--primary-dark,#7A0E3D);background:var(--gold-pale,#F4EAD2);border:1px solid var(--gold,#B8863B);border-radius:999px;padding:5px 12px;cursor:pointer;transition:var(--transition,.2s);}
+.gallery-choose:hover{background:var(--gold,#B8863B);color:#fff;}
+</style>
+</head>
+
+<body>
+
+<!--================ HEADER ================-->
+<header class="header">
+<div class="container">
+<nav class="navbar">
+<a href="index.html" class="logo">
+<img src="../images/logo.png" alt="Logo">
+<div>
+<h2>SSJ Matrimony</h2>
+<span>सेठ-सेठिया (जैन) समाज</span>
+</div>
+</a>
+<ul class="menu">
+<li><a href="user-dashboard.html">Dashboard</a></li>
+<li><a href="search.html">Search</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="login.html">Logout</a></li>
+</ul>
+<div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+</nav>
+</div>
+</header>
+
+<!--================ EDIT PROFILE FORM ================-->
+<section class="register-section">
+<div class="register-container">
+<div class="register-wrapper">
+<div class="register-card">
+<div class="register-title">
+<h2>✏️ प्रोफ़ाइल संपादित करें</h2>
+<p>अपनी जानकारी अपडेट करें और सेव करें</p>
+</div>
+
+<form id="editProfileForm">
+<div class="form-grid">
+
+<div class="form-group full" style="text-align:center;">
+<label>प्रोफ़ाइल फोटो</label>
+<div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+<img id="photoPreview" src="../images/user.png" alt="प्रोफ़ाइल फोटो प्रीव्यू" style="width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid var(--primary);"/>
+<input accept="image/*" id="profilePhotoInput" style="max-width:260px;" type="file"/>
+</div>
+</div>
+
+<div class="form-group full">
+<label>फोटो गैलरी (अधिकतम 4 फोटो)</label>
+<p class="biz-cat-hint" style="margin-top:0;">यहाँ अपनी 4 तक फोटो जोड़ें, ये आपके Profile Gallery में दिखेंगी</p>
+<div class="gallery-slots">
+<div class="gallery-slot">
+<img class="gallery-preview" id="galleryPreview1" src="../images/user.png" alt="गैलरी फोटो 1"/>
+<label class="gallery-choose" for="galleryInput1"><i class="fas fa-camera"></i> फोटो 1</label>
+<input accept="image/*" id="galleryInput1" type="file" style="display:none;"/>
+</div>
+<div class="gallery-slot">
+<img class="gallery-preview" id="galleryPreview2" src="../images/user.png" alt="गैलरी फोटो 2"/>
+<label class="gallery-choose" for="galleryInput2"><i class="fas fa-camera"></i> फोटो 2</label>
+<input accept="image/*" id="galleryInput2" type="file" style="display:none;"/>
+</div>
+<div class="gallery-slot">
+<img class="gallery-preview" id="galleryPreview3" src="../images/user.png" alt="गैलरी फोटो 3"/>
+<label class="gallery-choose" for="galleryInput3"><i class="fas fa-camera"></i> फोटो 3</label>
+<input accept="image/*" id="galleryInput3" type="file" style="display:none;"/>
+</div>
+<div class="gallery-slot">
+<img class="gallery-preview" id="galleryPreview4" src="../images/user.png" alt="गैलरी फोटो 4"/>
+<label class="gallery-choose" for="galleryInput4"><i class="fas fa-camera"></i> फोटो 4</label>
+<input accept="image/*" id="galleryInput4" type="file" style="display:none;"/>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+<label>प्रथम नाम *</label>
+<input class="form-control" id="firstName" placeholder="प्रथम नाम" required type="text"/>
+</div>
+<div class="form-group">
+<label>अंतिम नाम *</label>
+<input class="form-control" id="lastName" placeholder="अंतिम नाम" required type="text"/>
+</div>
+
+<div class="form-group">
+<label>लिंग</label>
+<select class="form-control" id="gender">
+<option value="">चयन करें</option>
+<option>पुरुष</option>
+<option>महिला</option>
+</select>
+</div>
+<div class="form-group">
+<label>जन्म तिथि</label>
+<div style="display:flex;gap:8px;">
+<select class="form-control" id="dobDay" style="flex:1;">
+<option value="">दिन</option>
+</select>
+<select class="form-control" id="dobMonth" style="flex:1.4;">
+<option value="">महीना</option>
+<option value="01">जनवरी</option>
+<option value="02">फरवरी</option>
+<option value="03">मार्च</option>
+<option value="04">अप्रैल</option>
+<option value="05">मई</option>
+<option value="06">जून</option>
+<option value="07">जुलाई</option>
+<option value="08">अगस्त</option>
+<option value="09">सितंबर</option>
+<option value="10">अक्टूबर</option>
+<option value="11">नवंबर</option>
+<option value="12">दिसंबर</option>
+</select>
+<select class="form-control" id="dobYear" style="flex:1;">
+<option value="">साल</option>
+</select>
+</div>
+<input type="hidden" id="dob"/>
+</div>
+
+<div class="form-group">
+<label>आयु</label>
+<input class="form-control" id="age" placeholder="आयु" type="number" readonly/>
+</div>
+<div class="form-group">
+<label>वैवाहिक स्थिति</label>
+<select class="form-control" id="maritalStatus">
+<option>चयन करें</option>
+<option>अविवाहित</option>
+<option>तलाकशुदा</option>
+<option>विधुर</option>
+<option>विधवा</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>पिता का नाम</label>
+<input class="form-control" id="fatherName" placeholder="पिता का पूरा नाम" type="text"/>
+</div>
+<div class="form-group">
+<label>माता का नाम</label>
+<input class="form-control" id="motherName" placeholder="माता का पूरा नाम" type="text"/>
+</div>
+
+<div class="form-group">
+<label>पिता का गोत्र</label>
+<input class="form-control" id="fatherGotra" placeholder="पिता का गोत्र" type="text"/>
+</div>
+<div class="form-group">
+<label>माता का गोत्र</label>
+<input class="form-control" id="motherGotra" placeholder="माता का गोत्र" type="text"/>
+</div>
+<div class="form-group">
+<label>परिवार का व्यवसाय</label>
+<input class="form-control" id="familyBusiness" placeholder="व्यवसाय" type="text"/>
+</div>
+
+<div class="form-group full">
+<label>पूरा पता</label>
+<textarea class="form-control" id="address" placeholder="पूरा पता" rows="3"></textarea>
+</div>
+
+<div class="form-group">
+<label>राज्य</label>
+<input class="form-control" id="state" placeholder="राज्य" type="text"/>
+</div>
+<div class="form-group">
+<label>शहर</label>
+<input class="form-control" id="city" placeholder="शहर" type="text"/>
+</div>
+
+<div class="form-group">
+<label>मोबाइल नंबर *</label>
+<input class="form-control" id="mobile" placeholder="9876543210" required type="tel" maxlength="10"/>
+</div>
+<div class="form-group">
+<label>ईमेल</label>
+<input class="form-control" id="email" placeholder="ईमेल (optional)" type="email"/>
+</div>
+
+<div class="form-group">
+<label>शिक्षा</label>
+<input class="form-control" id="education" placeholder="शिक्षा" type="text"/>
+</div>
+<div class="form-group">
+<label>व्यवसाय</label>
+<input class="form-control" id="profession" placeholder="व्यवसाय" type="text"/>
+</div>
+
+</div>
+
+<div class="security-questions-block" id="password">
+<h4>🔒 पासवर्ड बदलें (वैकल्पिक)</h4>
+<p class="security-questions-note">अगर पासवर्ड बदलना नहीं है, तो इन्हें खाली छोड़ दें।</p>
+<div class="form-grid">
+<div class="form-group">
+<label>नया पासवर्ड</label>
+<input class="form-control" id="newPassword" placeholder="नया पासवर्ड" type="password"/>
+</div>
+<div class="form-group">
+<label>नया पासवर्ड पुनः दर्ज करें</label>
+<input class="form-control" id="confirmNewPassword" placeholder="नया पासवर्ड पुनः दर्ज करें" type="password"/>
+</div>
+</div>
+</div>
+
+<div class="form-navigation">
+<a href="user-dashboard.html" class="btn btn-prev" style="text-decoration:none;display:inline-flex;align-items:center;">
+<i class="fa-solid fa-arrow-left"></i>&nbsp;रद्द करें
+</a>
+<button class="btn btn-submit" type="submit">
+<i class="fa-solid fa-floppy-disk"></i>&nbsp;सेव करें
+</button>
+</div>
+</form>
+
+</div>
+</div>
+</div>
+</section>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="../js/firebase-init.js"></script>
+<script src="../js/ssj-data.js"></script>
+
+<script>
+(function(){
+    var stored = null;
+    try{ stored = JSON.parse(localStorage.getItem('ssjProfile') || 'null'); }catch(err){}
+
+    if(!stored){
+        window.location.href = 'login.html';
+        return;
+    }
+
+    function fill(id, value){
+        var el = document.getElementById(id);
+        if(el){ el.value = value || ''; }
+    }
+    fill('firstName', stored.firstName);
+    fill('lastName', stored.lastName);
+    fill('gender', stored.gender);
+    fill('age', stored.age);
+    fill('maritalStatus', stored.maritalStatus);
+    fill('fatherName', stored.fatherName);
+    fill('motherName', stored.motherName);
+    fill('fatherGotra', stored.fatherGotra || stored.gotra);
+    fill('motherGotra', stored.motherGotra);
+    fill('familyBusiness', stored.familyBusiness);
+    fill('address', stored.address);
+    fill('state', stored.state);
+    fill('city', stored.city);
+    fill('mobile', stored.mobile);
+    fill('email', stored.email);
+    fill('education', stored.education);
+    fill('profession', stored.profession);
+
+    var photoPreview = document.getElementById('photoPreview');
+    if(photoPreview && stored.photo){ photoPreview.src = stored.photo; }
+
+    // ---- Gallery photos (up to 4) ----
+    var galleryPhotos = (stored.photos && stored.photos.length) ? stored.photos.slice(0, 4) : [];
+    for(var g = 1; g <= 4; g++){
+        var gPreview = document.getElementById('galleryPreview' + g);
+        if(gPreview && galleryPhotos[g - 1]){ gPreview.src = galleryPhotos[g - 1]; }
+        (function(index, previewEl){
+            var input = document.getElementById('galleryInput' + index);
+            if(input){
+                input.addEventListener('change', function(){
+                    var file = input.files && input.files[0];
+                    if(file){
+                        var reader = new FileReader();
+                        reader.onload = function(e){ previewEl.src = e.target.result; };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+        })(g, gPreview);
+    }
+
+    var photoInput = document.getElementById('profilePhotoInput');
+    if(photoInput){
+        photoInput.addEventListener('change', function(){
+            var file = photoInput.files && photoInput.files[0];
+            if(file){
+                var reader = new FileReader();
+                reader.onload = function(e){ photoPreview.src = e.target.result; };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    var dobDaySel = document.getElementById('dobDay');
+    var dobMonthSel = document.getElementById('dobMonth');
+    var dobYearSel = document.getElementById('dobYear');
+    var dobHidden = document.getElementById('dob');
+    var ageInput = document.getElementById('age');
+
+    if(dobDaySel && dobYearSel){
+        var curYear = new Date().getFullYear();
+        var minYear = 1950, maxYear = curYear - 18;
+        for(var d = 1; d <= 31; d++){
+            var dd = (d < 10 ? '0' : '') + d;
+            dobDaySel.insertAdjacentHTML('beforeend', '<option value="'+dd+'">'+d+'</option>');
+        }
+        for(var y = maxYear; y >= minYear; y--){
+            dobYearSel.insertAdjacentHTML('beforeend', '<option value="'+y+'">'+y+'</option>');
+        }
+    }
+
+    if(dobDaySel && dobMonthSel && dobYearSel && dobHidden && ageInput){
+        function calcAgeFromParts(){
+            var dd = dobDaySel.value, mm = dobMonthSel.value, yy = dobYearSel.value;
+            if(!dd || !mm || !yy){ return; }
+            var isoStr = yy + '-' + mm + '-' + dd;
+            var dob = new Date(isoStr + 'T00:00:00');
+            if(isNaN(dob.getTime())){ return; }
+            dobHidden.value = isoStr;
+            var today = new Date();
+            var age = today.getFullYear() - dob.getFullYear();
+            var m = today.getMonth() - dob.getMonth();
+            if(m < 0 || (m === 0 && today.getDate() < dob.getDate())){ age--; }
+            if(age >= 0 && age < 120){ ageInput.value = age; }
+        }
+        dobDaySel.addEventListener('change', calcAgeFromParts);
+        dobMonthSel.addEventListener('change', calcAgeFromParts);
+        dobYearSel.addEventListener('change', calcAgeFromParts);
+
+        // Pre-fill dropdowns from previously saved dob (format: YYYY-MM-DD)
+        if(stored.dob && /^\d{4}-\d{2}-\d{2}$/.test(stored.dob)){
+            var parts = stored.dob.split('-');
+            dobYearSel.value = parts[0];
+            dobMonthSel.value = parts[1];
+            dobDaySel.value = parts[2];
+            calcAgeFromParts();
+        }
+    }
+
+    var form = document.getElementById('editProfileForm');
+    form.addEventListener('submit', async function(e){
+        e.preventDefault();
+
+        var newPwd = document.getElementById('newPassword').value;
+        var confirmPwd = document.getElementById('confirmNewPassword').value;
+        if(newPwd || confirmPwd){
+            if(newPwd !== confirmPwd){
+                alert('नया पासवर्ड और पुनः दर्ज किया गया पासवर्ड मेल नहीं खा रहे हैं।');
+                return;
+            }
+        }
+
+        function val(id){ var el = document.getElementById(id); return el ? el.value : ''; }
+
+        var galleryDefault = '../images/user.png';
+        var savedPhotos = [];
+        for(var g = 1; g <= 4; g++){
+            var gPreview = document.getElementById('galleryPreview' + g);
+            if(gPreview && gPreview.src && gPreview.src.indexOf(galleryDefault.replace('../', '')) === -1){
+                savedPhotos.push(gPreview.src);
+            }
+        }
+
+        var updated = Object.assign({}, stored, {
+            firstName: val('firstName'),
+            lastName: val('lastName'),
+            gender: val('gender'),
+            dob: val('dob'),
+            age: val('age'),
+            maritalStatus: val('maritalStatus'),
+            fatherName: val('fatherName'),
+            motherName: val('motherName'),
+            fatherGotra: val('fatherGotra'),
+            motherGotra: val('motherGotra'),
+            familyBusiness: val('familyBusiness'),
+            address: val('address'),
+            state: val('state'),
+            city: val('city'),
+            mobile: val('mobile'),
+            email: val('email'),
+            education: val('education'),
+            profession: val('profession'),
+            photo: photoPreview.src,
+            photos: savedPhotos
+        });
+        if(newPwd){
+            updated.password = (typeof SSJ !== 'undefined' && SSJ.hashPassword)
+                ? await SSJ.hashPassword(newPwd)
+                : newPwd;
+        }
+
+        try{
+            localStorage.setItem('ssjProfile', JSON.stringify(updated));
+            var allMembers = JSON.parse(localStorage.getItem('ssjMembers') || '[]');
+            var foundInList = false;
+            allMembers = allMembers.map(function(m){
+                if(m.profileId === updated.profileId){ foundInList = true; return updated; }
+                return m;
+            });
+            if(!foundInList){ allMembers.push(updated); }
+            localStorage.setItem('ssjMembers', JSON.stringify(allMembers));
+        }catch(err){}
+
+        // Sync the edit to Firestore too, so other devices see the
+        // updated details (not just this browser's local copy). We wait
+        // for this before redirecting, otherwise navigating away cancels
+        // the write while it's still in flight.
+        if(window.SSJ && SSJ.cloud){ await SSJ.cloud.saveMember(updated); }
+
+        alert('आपकी प्रोफ़ाइल सफलतापूर्वक अपडेट हो गई है।');
+        window.location.href = 'profile.html';
+    });
+})();
+</script>
+
+</body>
+</html>

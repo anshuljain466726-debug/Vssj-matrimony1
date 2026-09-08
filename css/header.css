@@ -1,0 +1,346 @@
+/*==================================================
+            SSJ MATRIMONY
+            HEADER.CSS  —  Premium
+==================================================*/
+
+/*========== TOP BAR ==========*/
+
+.top-bar{
+    width:100%;
+    background:var(--gradient);
+    color:var(--white);
+    position:relative;
+    z-index:1000;
+    border-bottom:1px solid var(--gold);
+}
+
+.top-bar .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:11px 20px;
+    flex-wrap:wrap;
+    gap:16px;
+}
+
+.top-bar-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+}
+
+.top-bar-item i{
+    font-size:17px;
+    color:var(--gold-light);
+}
+
+.top-bar-item strong{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+}
+
+.top-bar-item span{
+    display:block;
+    font-size:11px;
+    opacity:.8;
+}
+
+.top-bar-item a{
+    color:var(--white);
+}
+
+/*----- SECURE BADGE (gold banner) -----*/
+
+.top-bar-secure{
+    background:var(--gradient-gold);
+    color:var(--primary-dark);
+    padding:9px 24px;
+    border-radius:var(--radius-sm);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:600;
+    text-align:left;
+}
+
+.top-bar-secure i{
+    color:var(--primary-dark);
+    font-size:19px;
+}
+
+.top-bar-secure span{
+    color:var(--primary-dark);
+    opacity:.75;
+}
+
+/*----- SOCIAL ICONS -----*/
+
+.top-bar-social{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.top-bar-social a{
+    width:30px;
+    height:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(232,206,148,.35);
+    border-radius:50%;
+    color:var(--white);
+    transition:var(--transition);
+}
+
+.top-bar-social a:hover{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:var(--primary-dark);
+}
+
+/*----- RESPONSIVE -----*/
+
+@media(max-width:900px){
+    .top-bar-item span,
+    .top-bar-secure span{
+        display:none;
+    }
+}
+
+@media(max-width:700px){
+    .top-bar .container{
+        justify-content:center;
+    }
+    .top-bar-item:nth-child(2){
+        display:none;
+    }
+}
+
+/*========== NAV ACTIONS (Login / Register buttons) ==========*/
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.btn-sm{
+    padding:11px 24px !important;
+    font-size:14px;
+}
+
+/*========== HEADER ==========*/
+
+header{
+    width:100%;
+    background:var(--white);
+    box-shadow:0 1px 0 var(--border), 0 12px 24px rgba(122,14,61,.05);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+/*========== NAVBAR ==========*/
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    height:var(--header-height);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+}
+
+/*========== LOGO ==========*/
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.logo img{
+    width:54px;
+}
+
+.logo h2{
+    font-family:var(--font-display);
+    font-size:26px;
+    color:var(--primary-dark);
+    font-weight:400;
+    letter-spacing:.5px;
+}
+
+.logo span{
+    display:block;
+    font-size:12.5px;
+    color:var(--gold-dark);
+    letter-spacing:.3px;
+}
+
+/*========== MENU ==========*/
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.menu li{
+    list-style:none;
+}
+
+.menu li a{
+    color:var(--dark);
+    font-size:15.5px;
+    font-weight:600;
+    transition:.3s;
+    position:relative;
+}
+
+.menu li a:hover{
+    color:var(--primary);
+}
+
+.menu li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:var(--gold);
+    transition:.3s;
+}
+
+.menu li a:hover::after{
+    width:100%;
+}
+
+.menu li a.active{
+    color:var(--primary);
+    font-size:14px;
+}
+
+.menu li a.active::after{
+    width:100%;
+}
+
+/*========== LOGIN BUTTON ==========*/
+
+.login-btn{
+    background:var(--gradient);
+    color:#fff;
+    padding:12px 25px;
+    border-radius:var(--radius-sm);
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--shadow);
+}
+
+/*========== MOBILE MENU ==========*/
+
+.menu-toggle{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+    color:var(--primary);
+}
+
+/*========== RESPONSIVE ==========*/
+
+@media(max-width:991px){
+
+.menu{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0;
+    background:var(--white);
+    box-shadow:0 12px 24px rgba(122,14,61,.12);
+    padding:10px 20px;
+    max-height:80vh;
+    overflow-y:auto;
+}
+
+.menu.show{
+    display:flex;
+}
+
+.menu li{
+    width:100%;
+}
+
+.menu li a{
+    display:block;
+    padding:14px 4px;
+    width:100%;
+    border-bottom:1px solid var(--border);
+}
+
+.menu li a::after{
+    display:none;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.menu-toggle.open i::before{
+    content:"\f00d";
+}
+
+.logo h2{
+    font-size:22px;
+}
+
+.navbar{
+    position:relative;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+}
+
+@media(max-width:576px){
+
+.navbar{
+    height:auto;
+    min-height:70px;
+    padding:12px 15px;
+}
+
+.logo img{
+    width:38px;
+}
+
+.logo h2{
+    font-size:16px;
+}
+
+.logo span{
+    font-size:10.5px;
+}
+
+.nav-actions{
+    gap:8px;
+}
+
+.btn-sm{
+    padding:8px 14px !important;
+    font-size:13px;
+}
+
+}

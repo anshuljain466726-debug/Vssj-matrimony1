@@ -1,0 +1,799 @@
+/*==================================================
+        SSJ MATRIMONY
+        MOBILE-THEME.CSS
+        Site-wide mobile responsiveness layer.
+        Loaded LAST on every page (after all other
+        CSS files) so it can safely fine-tune and
+        patch mobile behaviour without touching the
+        existing page stylesheets.
+==================================================*/
+
+/*==================================================
+        1. GLOBAL / BASE
+==================================================*/
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+    width:100%;
+}
+
+.container{
+    width:100%;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* Prevent iOS auto-zoom on form focus by keeping inputs at 16px on touch screens */
+@media(max-width:768px){
+    input,
+    select,
+    textarea,
+    button{
+        font-size:16px;
+    }
+}
+
+/* Tap targets */
+@media(max-width:576px){
+    a,
+    button,
+    .btn,
+    .btn-sm,
+    .menu-toggle{
+        min-height:38px;
+    }
+}
+
+table{
+    display:block;
+    width:100%;
+    max-width:100%;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+}
+
+/*==================================================
+        2. TYPOGRAPHY SCALE (small phones)
+==================================================*/
+
+@media(max-width:576px){
+    h1{ font-size:clamp(24px,7vw,32px) !important; line-height:1.25; }
+    h2{ font-size:clamp(20px,6vw,26px) !important; line-height:1.3; }
+    h3{ font-size:clamp(17px,5vw,20px) !important; }
+    p{ font-size:15px; }
+}
+
+@media(max-width:400px){
+    .container{
+        padding-left:14px;
+        padding-right:14px;
+    }
+    h1{ font-size:22px !important; }
+    h2{ font-size:19px !important; }
+}
+
+/*==================================================
+        3. HEADER / NAVBAR (extra fine-tune)
+==================================================*/
+
+@media(max-width:991px){
+    .menu{
+        z-index:998;
+        width:100%;
+    }
+}
+
+@media(max-width:576px){
+    .top-bar .container{
+        padding:8px 12px;
+        gap:8px;
+    }
+    .top-bar-item strong{
+        font-size:12px;
+    }
+    .top-bar-secure{
+        padding:7px 14px;
+        font-size:13px;
+    }
+    .nav-actions .btn-sm span{
+        display:none;
+    }
+}
+
+@media(max-width:400px){
+    .logo img{
+        width:32px;
+    }
+    .logo h2{
+        font-size:14px !important;
+    }
+    .logo span{
+        display:none;
+    }
+}
+
+/*==================================================
+        4. HOME / HERO SECTIONS
+==================================================*/
+
+@media(max-width:768px){
+    .hero,
+    .page-hero,
+    .about-hero,
+    .search-hero{
+        padding-top:36px;
+        padding-bottom:30px;
+        text-align:center;
+    }
+}
+
+@media(max-width:576px){
+    .hero .container,
+    .about-hero .container{
+        grid-template-columns:1fr !important;
+    }
+    .hero-buttons,
+    .btn-group{
+        flex-direction:column;
+        width:100%;
+    }
+    .hero-buttons .btn,
+    .hero-buttons a{
+        width:100%;
+        text-align:center;
+    }
+}
+
+/*==================================================
+        5. FORMS — login / register / contact /
+           forms-compact / admin-login
+==================================================*/
+
+@media(max-width:576px){
+    .login-card,
+    .register-card,
+    .contact-form,
+    .form-card,
+    .auth-card{
+        padding:24px 18px !important;
+        margin:0 14px;
+        width:auto !important;
+    }
+
+    .form-row,
+    .form-grid{
+        grid-template-columns:1fr !important;
+    }
+
+    form .btn,
+    form button[type="submit"]{
+        width:100%;
+    }
+}
+
+@media(max-width:576px){
+    #register-form .grid,
+    .register-grid{
+        grid-template-columns:1fr !important;
+    }
+    .form-navigation{
+        flex-wrap:wrap;
+        gap:10px;
+        justify-content:center;
+    }
+}
+
+/*==================================================
+        6. USER DASHBOARD (dashboard.css)
+==================================================*/
+
+@media(max-width:400px){
+    .dashboard h1{
+        font-size:22px !important;
+    }
+    .dashboard-grid{
+        gap:16px;
+    }
+}
+
+/*==================================================
+        7. MEMBER DASHBOARD (member-dashboard.css)
+           sidebar layout — shrink further on small
+           phones so content area gets more room
+==================================================*/
+
+@media(max-width:480px){
+    .sidebar{
+        width:58px !important;
+    }
+    .sidebar .logo{
+        padding:16px 4px !important;
+    }
+    .sidebar .logo img{
+        width:34px !important;
+        height:34px !important;
+    }
+    .sidebar ul li a{
+        padding:12px 0 !important;
+        font-size:18px;
+    }
+    .main{
+        margin-left:58px !important;
+        padding:14px 10px 40px !important;
+    }
+    .stat-grid,
+    .member-dashboard .grid{
+        grid-template-columns:repeat(auto-fit,minmax(120px,1fr)) !important;
+    }
+}
+
+/*==================================================
+        8. ADMIN PANEL (admin.css)
+==================================================*/
+
+@media(max-width:768px){
+    .admin-container{
+        flex-direction:column;
+    }
+    .sidebar h2{
+        font-size:18px;
+    }
+    .sidebar button{
+        font-size:14px;
+        padding:10px;
+    }
+    .main-content{
+        padding:16px;
+    }
+    table th,
+    table td{
+        padding:8px;
+        font-size:13px;
+        white-space:nowrap;
+    }
+}
+
+@media(max-width:480px){
+    .dashboard .card{
+        padding:14px;
+    }
+    .card h1{
+        font-size:22px;
+    }
+}
+
+/*==================================================
+        9. SEARCH PAGE (search.css)
+==================================================*/
+
+@media(max-width:576px){
+    .search-hero h1{
+        font-size:24px !important;
+    }
+    .search-results-grid,
+    .results-grid{
+        grid-template-columns:1fr !important;
+    }
+}
+
+/*==================================================
+        10. PROFILE PAGE (profile.css) —
+            light extra-small polish only, since
+            profile.css already has 480/768/992
+            breakpoints of its own
+==================================================*/
+
+@media(max-width:400px){
+    .profile-tabs,
+    .tabs{
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+        flex-wrap:nowrap !important;
+    }
+}
+
+/*==================================================
+        11. FOOTER
+==================================================*/
+
+@media(max-width:576px){
+    .footer{
+        text-align:center;
+        padding:34px 0 18px;
+    }
+    .footer-grid{
+        gap:22px;
+        text-align:center;
+    }
+    .footer-box h3{
+        margin-bottom:10px;
+        font-size:16px;
+    }
+    .footer-box ul li{
+        margin-bottom:6px;
+    }
+    .footer-box p{
+        font-size:13.5px;
+        line-height:1.6;
+    }
+    .footer-social{
+        justify-content:center;
+    }
+    .social-links{
+        justify-content:center;
+        display:flex;
+        gap:10px;
+    }
+    .footer .copyright{
+        font-size:12px;
+        margin-top:16px;
+    }
+}
+
+/*==================================================
+        12. ABOUT / CONTACT / STATIC PAGES
+            (about.css, style.css shared cards)
+==================================================*/
+
+@media(max-width:576px){
+    .founder-box,
+    .info-grid,
+    .value-grid,
+    .team-grid{
+        grid-template-columns:1fr !important;
+        text-align:center;
+    }
+    .cta-section h2{
+        font-size:26px !important;
+    }
+}
+
+/*==================================================
+        13. LIGHTBOX / MODALS on small screens
+==================================================*/
+
+@media(max-width:576px){
+    .lightbox-content,
+    .modal-content{
+        width:92% !important;
+        margin:auto;
+    }
+}
+
+/*==================================================
+        14. LANDSCAPE PHONES — reduce vertical
+            padding so hero/forms fit the viewport
+==================================================*/
+
+@media(max-height:450px) and (orientation:landscape){
+    .hero,
+    .page-hero,
+    .login-section,
+    .register-section{
+        padding-top:20px !important;
+        padding-bottom:20px !important;
+    }
+}
+
+/*==================================================
+        15. MISSING COMPONENTS
+        These elements are used in the HTML markup
+        but had no CSS anywhere in the project.
+        Added here (base styles + responsive) so
+        every page renders correctly on all devices.
+==================================================*/
+
+/*----- Floating WhatsApp button (used on 15+ pages) -----*/
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:86px;
+    width:56px;
+    height:56px;
+    background:#25D366;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    box-shadow:0 8px 20px rgba(37,211,102,.4);
+    z-index:900;
+    transition:var(--transition,.3s);
+}
+
+.whatsapp:hover{
+    transform:scale(1.08);
+    color:#fff;
+}
+
+@media(max-width:576px){
+    .whatsapp{
+        width:48px;
+        height:48px;
+        font-size:24px;
+        right:14px;
+        bottom:76px;
+    }
+}
+
+/*----- Back-to-top button -----*/
+
+#topBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:44px;
+    height:44px;
+    border:none;
+    border-radius:50%;
+    background:var(--primary,#C2185B);
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 20px rgba(122,14,61,.3);
+    z-index:900;
+    transition:var(--transition,.3s);
+}
+
+#topBtn.show{
+    display:flex;
+}
+
+#topBtn:hover{
+    background:var(--primary-dark,#7A0E3D);
+    transform:translateY(-3px);
+}
+
+@media(max-width:576px){
+    #topBtn{
+        width:38px;
+        height:38px;
+        font-size:15px;
+        right:14px;
+        bottom:20px;
+    }
+}
+
+/*----- Static content pages (welcome, prime, help, advertise) -----*/
+
+/* Counters (welcome.html) */
+
+.static-page .counter-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    text-align:center;
+    margin-top:30px;
+}
+
+.static-page .counter-box{
+    background:#fff;
+    border:1px solid var(--border,#E7D9BB);
+    border-radius:var(--radius,12px);
+    padding:28px 16px;
+    box-shadow:var(--shadow-sm,0 2px 10px rgba(122,14,61,.10));
+}
+
+.static-page .counter-icon{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.static-page .counter-box h2{
+    font-size:30px;
+    color:var(--primary,#C2185B);
+    margin-bottom:4px;
+}
+
+.static-page .counter-box p{
+    color:var(--gray,#7C6E5E);
+    font-size:14px;
+}
+
+@media(max-width:768px){
+    .static-page .counter-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:16px;
+    }
+}
+
+@media(max-width:400px){
+    .static-page .counter-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* Features (welcome.html) */
+
+.static-page .feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:24px;
+    margin-top:30px;
+}
+
+.static-page .feature-card{
+    background:#fff;
+    border:1px solid var(--border,#E7D9BB);
+    border-radius:var(--radius,12px);
+    padding:30px 22px;
+    text-align:center;
+    box-shadow:var(--shadow-sm,0 2px 10px rgba(122,14,61,.10));
+    transition:var(--transition,.3s);
+}
+
+.static-page .feature-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow,0 14px 34px rgba(122,14,61,.14));
+}
+
+.static-page .feature-icon{
+    font-size:32px;
+    margin-bottom:14px;
+}
+
+.static-page .feature-card h3{
+    font-size:18px;
+    color:var(--primary-dark,#7A0E3D);
+    margin-bottom:10px;
+}
+
+.static-page .feature-card p{
+    color:var(--gray,#7C6E5E);
+    font-size:14.5px;
+    line-height:1.7;
+}
+
+@media(max-width:576px){
+    .static-page .feature-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+    .static-page .feature-card{
+        padding:22px 18px;
+    }
+}
+
+/* FAQ (welcome.html) */
+
+.static-page .faq{
+    padding:60px 0;
+}
+
+.static-page .faq-box{
+    border-bottom:1px solid var(--border,#E7D9BB);
+    padding:16px 0;
+    margin-bottom:0;
+}
+
+.static-page .faq-box:last-child{
+    border-bottom:none;
+}
+
+.static-page .faq-box h3{
+    font-size:16.5px;
+    color:var(--primary-dark,#7A0E3D);
+    margin-bottom:6px;
+    padding-left:22px;
+    position:relative;
+}
+
+.static-page .faq-box h3::before{
+    content:"❓";
+    position:absolute;
+    left:0;
+    top:1px;
+    font-size:13px;
+}
+
+.static-page .faq-box p{
+    color:var(--gray,#7C6E5E);
+    font-size:14.5px;
+    padding-left:22px;
+    line-height:1.6;
+}
+
+@media(max-width:576px){
+    .static-page .faq{
+        padding:40px 0;
+    }
+    .static-page .faq-box{
+        padding:14px 0;
+    }
+}
+
+/* Membership / Advertisement plan cards (prime.html, help.html) */
+
+.static-page .dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:26px;
+    margin-top:26px;
+}
+
+.static-page .dashboard-card{
+    background:#fff;
+    border:1px solid var(--border,#E7D9BB);
+    border-radius:var(--radius,12px);
+    padding:32px 26px;
+    text-align:center;
+    box-shadow:var(--shadow-sm,0 2px 10px rgba(122,14,61,.10));
+    transition:var(--transition,.3s);
+    position:relative;
+}
+
+.static-page .dashboard-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow,0 14px 34px rgba(122,14,61,.14));
+    border-color:var(--gold,#B8863B);
+}
+
+.static-page .dashboard-card > a{
+    color:var(--primary-dark,#7A0E3D);
+    font-weight:600;
+    font-size:16px;
+}
+
+.static-page .dashboard-card > a::after{
+    content:"";
+    position:absolute;
+    inset:0;
+}
+
+.static-page .dashboard-card > a:hover{
+    color:var(--primary,#C2185B);
+}
+
+.static-page .dashboard-card h2{
+    font-size:22px;
+    margin-bottom:6px;
+}
+
+.static-page .dashboard-card h3{
+    font-size:26px;
+    color:var(--primary,#C2185B);
+    margin-bottom:14px;
+}
+
+.static-page .dashboard-card p{
+    color:var(--gray,#7C6E5E);
+    font-size:14px;
+    margin-bottom:6px;
+    text-align:left;
+}
+
+.static-page .dashboard-card button{
+    width:100%;
+    margin-top:16px;
+    padding:12px;
+    border:none;
+    border-radius:var(--radius-sm,6px);
+    background:var(--gradient,linear-gradient(135deg,#C2185B,#7A0E3D));
+    color:#fff;
+    font-weight:600;
+    font-size:15px;
+    cursor:pointer;
+    transition:var(--transition,.3s);
+}
+
+.static-page .dashboard-card button:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--shadow,0 14px 34px rgba(122,14,61,.14));
+}
+
+@media(max-width:576px){
+    .static-page .dashboard-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+    .static-page .dashboard-card{
+        padding:24px 20px;
+    }
+}
+
+/* Plan / pricing table (help.html, advertise.html) */
+
+.static-page .admin-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    margin-top:20px;
+    border-radius:var(--radius-sm,6px);
+    overflow:hidden;
+    box-shadow:var(--shadow-sm,0 2px 10px rgba(122,14,61,.10));
+}
+
+.static-page .admin-table th{
+    background:var(--primary,#C2185B);
+    color:#fff;
+    padding:12px;
+    text-align:left;
+    font-size:14.5px;
+}
+
+.static-page .admin-table td{
+    padding:12px;
+    border-bottom:1px solid var(--border,#E7D9BB);
+    font-size:14px;
+}
+
+.static-page .admin-table tr:nth-child(even){
+    background:var(--light,#F6EFE1);
+}
+
+@media(max-width:576px){
+    .static-page .admin-table th,
+    .static-page .admin-table td{
+        padding:9px;
+        font-size:13px;
+        white-space:nowrap;
+    }
+}
+
+/* Advertisement form action buttons (advertise.html) */
+
+.static-page .form-buttons{
+    display:flex;
+    gap:14px;
+    margin-top:10px;
+}
+
+.static-page .form-buttons button{
+    flex:1;
+    padding:13px;
+    border:none;
+    border-radius:var(--radius-sm,6px);
+    font-weight:600;
+    font-size:15px;
+    cursor:pointer;
+    transition:var(--transition,.3s);
+}
+
+.static-page .form-buttons .btn-primary{
+    background:var(--gradient,linear-gradient(135deg,#C2185B,#7A0E3D));
+    color:#fff;
+}
+
+.static-page .form-buttons .btn-danger{
+    background:#fff;
+    color:#c0392b;
+    border:1px solid #c0392b;
+}
+
+.static-page .form-buttons .btn-primary:hover,
+.static-page .form-buttons .btn-danger:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--shadow-sm,0 2px 10px rgba(122,14,61,.10));
+}
+
+@media(max-width:480px){
+    .static-page .form-buttons{
+        flex-direction:column;
+    }
+}
+
+/* Premium badge chip (rendered dynamically by JS) */
+
+.premium-badge{
+    display:inline-block;
+    background:var(--gradient-gold,linear-gradient(135deg,#E8CE94,#B8863B));
+    color:var(--primary-dark,#7A0E3D);
+    font-size:12px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:var(--radius-round,50px);
+}

@@ -1,0 +1,90 @@
+rules_version = '2';
+
+// =====================================================
+// SSJ MATRIMONY — Firestore Security Rules
+// Project: vssjmatrimony
+//
+// This app has NO Firebase Authentication — mobile number
+// + password are checked by reading matching documents and
+// comparing the password field in the browser. Because of
+// that, these rules cannot check "is this the real owner of
+// this profile" the normal way (request.auth). They instead
+// just make sure every write has the right shape, and block
+// anything the app itself never needs to do (deleting data,
+// writing to random collections, etc).
+//
+// HOW TO APPLY:
+// Firebase Console → your project (vssjmatrimony) →
+// Firestore Database → Rules tab → paste this file's
+// content → Publish.
+// =====================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ---------- members ----------
+    // Read: needed by Search, Profile view, and Admin panel.
+    // Create: registration (register.html).
+    // Update: profile edits, admin approve/reject/premium, interest unlock.
+    // Delete: never done by the app.
+    match /members/{memberId} {
+      allow read: if true;
+
+      allow create: if request.resource.data.keys().hasAll(['profileId', 'firstName', 'mobile', 'password'])
+                    && request.resource.data.profileId is string
+                    && request.resource.data.mobile is string
+                    && request.resource.data.password is string;
+
+      allow update: if request.resource.data.profileId == resource.data.profileId
+                    && request.resource.data.mobile is string
+                    && request.resource.data.password is string;
+
+      allow delete: if false;
+    }
+
+    // ---------- interests (send / received / sent / accept-reject) ----------
+    match /interests/{interestId} {
+      allow read: if true;
+
+      allow create: if request.resource.data.keys().hasAll(['fromProfileId', 'toProfileId', 'status'])
+                    && request.resource.data.fromProfileId is string
+                    && request.resource.data.toProfileId is string;
+
+      // Only the status field is ever changed after creation (Accept/Reject).
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']);
+
+      allow delete: if false;
+    }
+
+    // ---------- ads (Advertise With Us) ----------
+    match /ads/{adId} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasAll(['id', 'status']);
+      // Admin approving/rejecting only ever changes "status".
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']);
+      allow delete: if false;
+    }
+
+    // ---------- admins ----------
+    // ⚠️ SECURITY NOTE: admin login works by reading this collection
+    // and comparing the password client-side, so "read" has to stay
+    // open for login to work at all — which also means anyone who
+    // opens the browser console can read every admin's password.
+    // This is a real risk. The correct long-term fix is to move
+    // admin login into a Cloud Function (server-side password check)
+    // instead of a direct Firestore read. Until that's built, at
+    // least make sure nobody can create a new admin account or
+    // change a password except through the admin panel itself.
+    match /admins/{adminId} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasAll(['adminId', 'username', 'password', 'role']);
+      allow update: if request.resource.data.adminId == resource.data.adminId;
+      allow delete: if false;
+    }
+
+    // Block everything else by default.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+/*==================================================
+        SSJ MATRIMONY
+        LIGHTBOX.CSS  —  Click-to-enlarge image popup
+        (used with js/lightbox.js)
+==================================================*/
+
+.ssj-lightbox-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(20,8,12,.88);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:5000;
+    padding:30px;
+    animation:ssjLightboxFade .2s ease;
+}
+
+.ssj-lightbox-overlay.open{
+    display:flex;
+}
+
+@keyframes ssjLightboxFade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+.ssj-lightbox-img{
+    max-width:min(90vw,720px);
+    max-height:85vh;
+    border-radius:10px;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+    border:4px solid #fff;
+}
+
+.ssj-lightbox-close{
+    position:absolute;
+    top:22px;
+    right:28px;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.35);
+    color:#fff;
+    font-size:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.ssj-lightbox-close:hover{
+    background:var(--gold,#B8863B);
+    border-color:var(--gold,#B8863B);
+}
+
+/* cursor hint on images the lightbox is attached to */
+.gallery-item img,
+.profile-card .photo img,
+.hero-media-frame img{
+    cursor:zoom-in;
+}
+
+@media(max-width:576px){
+    .ssj-lightbox-close{
+        top:14px;
+        right:14px;
+        width:36px;
+        height:36px;
+        font-size:17px;
+    }
+}

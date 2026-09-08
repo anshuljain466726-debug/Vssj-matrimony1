@@ -1,0 +1,194 @@
+/*=========================================
+        LOGIN PAGE
+=========================================*/
+
+.login-section{
+
+    padding:80px 0;
+
+    background:#FFF5F7;
+
+    min-height:70vh;
+
+}
+
+.login-form{
+
+    max-width:450px;
+
+    margin:auto;
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.login-form h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    color:#d63384;
+
+    font-size:30px;
+
+}
+
+.form-group{
+
+    margin-bottom:20px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.form-group input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.form-group input:focus{
+
+    border-color:#d63384;
+
+    outline:none;
+
+}
+/*=========================================
+        LOGIN BUTTON
+=========================================*/
+
+.submit-box{
+
+    margin-top:25px;
+
+}
+
+.submit-box .btn{
+
+    width:100%;
+
+    padding:15px;
+
+    background:#d63384;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.submit-box .btn:hover{
+
+    background:#b81f6b;
+
+    transform:translateY(-2px);
+
+}
+
+/*=========================================
+        REMEMBER & LINKS
+=========================================*/
+
+.form-check{
+
+    margin-top:15px;
+
+    margin-bottom:20px;
+
+    font-size:15px;
+
+}
+
+.form-check input{
+
+    margin-right:8px;
+
+}
+
+.login-links{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:20px;
+
+}
+
+.login-links a{
+
+    color:#d63384;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.login-links a:hover{
+
+    color:#a61e61;
+
+    text-decoration:underline;
+
+}
+
+/*=========================================
+        MOBILE
+=========================================*/
+
+@media(max-width:768px){
+
+.login-form{
+
+    margin:20px;
+
+    padding:25px;
+
+}
+
+.login-form h2{
+
+    font-size:24px;
+
+}
+
+}

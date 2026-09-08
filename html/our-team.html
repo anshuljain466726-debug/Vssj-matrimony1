@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>हमारी टीम | SSJ Matrimony</title>
+<link href="../images/favicon.png" rel="icon"/>
+<link href="../css/reset.css" rel="stylesheet"/>
+<link href="../css/variables.css" rel="stylesheet"/>
+<link href="../css/common.css" rel="stylesheet"/>
+<link href="../css/header.css" rel="stylesheet"/>
+<link href="../css/about.css" rel="stylesheet"/>
+<link href="../css/footer.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Hind:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+<link href="../css/lightbox.css" rel="stylesheet"/>
+<link href="../css/mobile-theme.css" rel="stylesheet"/>
+<style>
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px;margin-top:28px;}
+.team-card{background:#fff;border:1px solid var(--border,#E7D9BB);border-radius:var(--radius,12px);box-shadow:var(--shadow-sm,0 2px 10px rgba(122,14,61,.08));text-align:center;padding:26px 16px;transition:.25s;}
+.team-card:hover{transform:translateY(-4px);box-shadow:var(--shadow,0 14px 34px rgba(122,14,61,.14));}
+.team-photo{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid var(--gold,#B8863B);margin:0 auto 14px;display:block;}
+.team-name{font-size:17px;font-weight:700;color:var(--primary-dark,#7A0E3D);margin:0 0 4px;}
+.team-role{font-size:13px;font-weight:600;color:var(--gold-dark,#8A6300);}
+.team-empty{text-align:center;color:var(--gray,#7C6E5E);padding:30px;}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="container">
+<nav class="navbar">
+<a class="logo" href="index.html">
+<img alt="SSJ Matrimony Logo" src="../images/logo-crest.svg"/>
+<div class="logo-text">
+<h2>SSJ MATRIMONY</h2>
+<span>सच्चे रिश्ते, खुशहाल जीवन</span>
+</div>
+</a>
+<ul class="menu">
+<li><a href="index.html">होम</a></li>
+<li><a href="about.html">हमारे बारे में</a></li>
+<li><a class="active" href="our-team.html">हमारी टीम</a></li>
+<li><a href="search.html">सदस्य खोजें</a></li>
+<li><a href="welcome.html">सफलताएँ</a></li>
+<li><a href="contact.html">संपर्क करें</a></li>
+</ul>
+<div class="nav-actions">
+<a class="btn-outline btn-sm" href="login.html">लॉगिन</a>
+<a class="btn btn-sm" href="register.html">पंजीकरण करें</a>
+</div>
+<div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+</nav>
+</div>
+</header>
+
+<main class="container">
+<section class="card">
+<h2 class="text-center">🤝 हमारी सपोर्ट टीम</h2>
+<p class="text-center" style="color:var(--gray,#7C6E5E);max-width:640px;margin:8px auto 0;">
+यहाँ SSJ Matrimony की Admin / Support Team के सदस्यों की सूची दी गई है, जो आपकी सहायता के लिए हमेशा उपलब्ध हैं।
+</p>
+<div class="team-grid" id="teamGrid">
+<p class="team-empty">Loading...</p>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-box">
+<h3><i class="fas fa-heart"></i> SSJ Matrimony</h3>
+<p>भारत का विश्वसनीय जैन वैवाहिक पोर्टल। Verified Profiles के साथ अपना Perfect Life Partner खोजें।</p>
+</div>
+<div class="footer-box">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
+<li><a href="about.html"><i class="fas fa-circle-info"></i> About Us</a></li>
+<li><a href="our-team.html"><i class="fas fa-people-group"></i> हमारी टीम</a></li>
+<li><a href="search.html"><i class="fas fa-magnifying-glass"></i> Search Partner</a></li>
+<li><a href="register.html"><i class="fas fa-pen-to-square"></i> Register</a></li>
+</ul>
+</div>
+<div class="footer-box">
+<h3>Legal</h3>
+<ul>
+<li><a href="privacy.html"><i class="fas fa-shield-halved"></i> Privacy Policy</a></li>
+<li><a href="terms.html"><i class="fas fa-scroll"></i> Terms &amp; Conditions</a></li>
+</ul>
+</div>
+<div class="footer-box">
+<h3>Contact</h3>
+<p><i class="fas fa-phone"></i> +91 9785229081</p>
+<p><i class="fas fa-envelope"></i> support@ssjmatrimony.in</p>
+<p><i class="fas fa-location-dot"></i> Rajasthan, India</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+<a href="https://wa.me/919785229081" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+</div>
+<hr/>
+<div class="copyright">© 2026 SSJ Matrimony | All Rights Reserved &nbsp;·&nbsp; <a href="admin-login.html" style="color:inherit;opacity:.65;font-size:12px;">Admin</a></div>
+</div>
+</footer>
+<a class="whatsapp" href="https://wa.me/919785229081" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</button>
+
+<script src="../js/script.js"></script>
+<script>
+(function () {
+    function getApprovedAdmins() {
+        try { return JSON.parse(localStorage.getItem("ssjAdmins")) || []; } catch (e) { return []; }
+    }
+
+    var superAdmin = {
+        name: "Super Admin",
+        role: "Super Admin",
+        photo: ""
+    };
+
+    var admins = [superAdmin].concat(getApprovedAdmins().map(function (a) {
+        return { name: a.name || a.username, role: a.role || "Admin", photo: a.photo || "" };
+    }));
+
+    var grid = document.getElementById("teamGrid");
+    if (!admins.length) {
+        grid.innerHTML = '<p class="team-empty">अभी कोई टीम सदस्य उपलब्ध नहीं है।</p>';
+        return;
+    }
+
+    grid.innerHTML = admins.map(function (a) {
+        var photoSrc = a.photo ? a.photo : "../images/user.png";
+        return '<div class="team-card">' +
+            '<img class="team-photo" src="' + photoSrc + '" alt="' + a.name + '"/>' +
+            '<h3 class="team-name">' + a.name + '</h3>' +
+            '<p class="team-role">' + a.role + '</p>' +
+            '</div>';
+    }).join("");
+})();
+</script>
+</body>
+</html>

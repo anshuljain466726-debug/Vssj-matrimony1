@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Login | SSJ Matrimony</title>
+<link href="../images/favicon.png" rel="icon"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<link href="../css/variables.css" rel="stylesheet"/>
+<link href="../css/admin.css" rel="stylesheet"/>
+<link href="../css/forms-compact.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Hind:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+<link href="../css/mobile-theme.css" rel="stylesheet"/>
+<style>
+body{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--primary-dark,#4a0f1e);
+    padding:20px;
+}
+.admin-login-card{
+    background:#fff;
+    max-width:380px;
+    width:100%;
+    padding:36px 30px;
+    border-radius:14px;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+.admin-login-card h2{
+    text-align:center;
+    margin-bottom:24px;
+    color:var(--primary-dark,#4a0f1e);
+}
+.admin-login-card label{
+    display:block;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:6px;
+    margin-top:14px;
+}
+.admin-login-card input{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+}
+.admin-login-card button{
+    width:100%;
+    margin-top:22px;
+    padding:13px;
+    border:none;
+    border-radius:8px;
+    background:var(--primary-dark,#4a0f1e);
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+#adminLoginError{
+    color:#c0392b;
+    text-align:center;
+    margin-top:12px;
+    font-size:14px;
+}
+.admin-demo-hint{
+    text-align:center;
+    margin-top:16px;
+    font-size:12.5px;
+    color:#8a8a8a;
+}
+</style>
+</head>
+<body>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="../js/firebase-init.js"></script>
+<script src="../js/ssj-data.js"></script>
+
+<div class="admin-login-card">
+<h2>🔐 Admin Login</h2>
+<form autocomplete="off" id="adminLoginForm">
+<label>Username</label>
+<input autocomplete="off" id="adminUsername" required="" type="text" placeholder="Username"/>
+<label>Password</label>
+<input autocomplete="new-password" id="adminPassword" required="" type="password" placeholder="Password"/>
+<button type="submit">लॉगिन करें</button>
+</form>
+<p id="adminLoginError"></p>
+</div>
+
+<script>
+(function(){
+    // Demo-only admin accounts (no backend in this build).
+    // Password below is the SHA-256 hash of "admin@123" — never store it as plain text.
+    var ADMINS = [
+        { username: "9785229081", password: "7676aaafb027c825bd9abab78b234070e702752f625b752e55e55b48e607e358", role: "Super Admin", adminId: "ADM001" }
+    ];
+
+    function getExtraAdmins(){
+        try{ return JSON.parse(localStorage.getItem("ssjAdmins")) || []; }catch(e){ return []; }
+    }
+
+    document.getElementById("adminLoginForm").addEventListener("submit", async function(e){
+
+        e.preventDefault();
+
+        var username = document.getElementById("adminUsername").value.trim();
+        var password = document.getElementById("adminPassword").value.trim();
+        var errorEl = document.getElementById("adminLoginError");
+        errorEl.textContent = "";
+
+        var hashedPassword = (typeof SSJ !== "undefined" && SSJ.hashPassword)
+            ? await SSJ.hashPassword(password)
+            : password;
+
+        function finishLogin(match){
+            if(!match){
+                errorEl.textContent = "Username या Password गलत है।";
+                return;
+            }
+            localStorage.setItem("adminUser", JSON.stringify({ adminId: match.adminId, username: match.username, role: match.role, city: match.city || "" }));
+            window.location.href = "admin.html";
+        }
+
+        // Try Firestore first (works across every device), fall back to
+        // the hardcoded Super Admin + this browser's local admin list.
+        var cloudLookup = (typeof SSJ !== "undefined" && SSJ.cloud) ? SSJ.cloud.findAdminLogin(username, hashedPassword) : Promise.resolve(null);
+        cloudLookup.then(function(cloudMatch){
+            if(cloudMatch){ finishLogin(cloudMatch); return; }
+            var all = ADMINS.concat(getExtraAdmins());
+            var localMatch = all.filter(function(a){ return a.username === username && a.password === hashedPassword; })[0];
+            finishLogin(localMatch);
+        });
+    });
+})();
+</script>
+
+</body>
+</html>

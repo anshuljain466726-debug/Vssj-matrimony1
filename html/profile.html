@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Profile | SSJ Matrimony</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+<link rel="stylesheet"
+href="../css/variables.css">
+
+<link rel="stylesheet"
+href="../css/profile.css">
+
+<link rel="stylesheet"
+href="../css/forms-compact.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="../css/lightbox.css" rel="stylesheet"/>
+<link href="../css/mobile-theme.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div class="profile-container">
+
+<div class="profile-card">
+
+<div align="center">
+
+<img
+id="mainPhoto"
+src="../images/user.png"
+alt="Profile Photo"
+class="profile-main-photo">
+
+<div style="margin:10px 0 5px;">
+
+<label for="changePhotoInput" style="display:inline-block;padding:8px 18px;background:#E91E63;color:#fff;border-radius:20px;font-size:13px;cursor:pointer;">
+📷 फोटो बदलें
+</label>
+
+<input type="file" id="changePhotoInput" accept="image/*" style="display:none;">
+
+</div>
+
+<h2 id="profileName">
+
+👤 Member Name
+
+</h2>
+
+<p>
+
+🆔 Profile ID :
+
+<span id="profileId">
+
+SSJ000001
+
+</span>
+
+</p>
+
+<span class="premium-badge">
+
+💎 Premium Member
+
+</span>
+
+</div>
+
+<hr>
+
+<h2>
+
+📋 Personal Information
+
+</h2>
+
+<table class="profile-table">
+<tr>
+    <td><b>👨 पिता का नाम</b></td>
+    <td id="fatherName">-</td>
+</tr>
+
+<tr>
+    <td><b>👨 पिता का गोत्र</b></td>
+    <td id="fatherGotra">-</td>
+</tr>
+
+<tr>
+    <td><b>👩 माता का नाम</b></td>
+    <td id="motherName">-</td>
+</tr>
+
+<tr>
+    <td><b>👩 माता का गोत्र</b></td>
+    <td id="motherGotra">-</td>
+</tr>
+
+<tr>
+    <td><b>🚻 लिंग</b></td>
+    <td id="profileGender">-</td>
+</tr>
+
+<tr>
+    <td><b>🎂 जन्म तिथि</b></td>
+    <td id="profileDob">-</td>
+</tr>
+
+<tr>
+    <td><b>🎂 आयु</b></td>
+    <td id="profileAge">-</td>
+</tr>
+
+<tr>
+    <td><b>💍 वैवाहिक स्थिति</b></td>
+    <td id="profileMarital">-</td>
+</tr>
+
+<tr>
+    <td><b>📱 मोबाइल</b></td>
+    <td id="profileMobile">-</td>
+</tr>
+
+<tr>
+    <td><b>📱 WhatsApp</b></td>
+    <td id="profileWhatsapp">-</td>
+</tr>
+
+<tr>
+    <td><b>📍 राज्य</b></td>
+    <td id="profileState">-</td>
+</tr>
+
+<tr>
+    <td><b>🏙️ शहर</b></td>
+    <td id="profileCity">-</td>
+</tr>
+
+<tr>
+    <td><b>🏠 पूरा पता</b></td>
+    <td id="profileAddress">-</td>
+</tr>
+
+<tr>
+    <td><b>🎓 शिक्षा</b></td>
+    <td id="profileEducation">-</td>
+</tr>
+
+<tr>
+    <td><b>💼 व्यवसाय</b></td>
+    <td id="profileProfession">-</td>
+</tr>
+<h2>🎓 शिक्षा एवं परिवार</h2>
+
+<table class="profile-table">
+
+<tr>
+<td><b>🎓 शिक्षा</b></td>
+<td id="education">-</td>
+</tr>
+
+<tr>
+<td><b>💼 व्यवसाय</b></td>
+<td id="profession">-</td>
+</tr>
+
+<tr>
+<td><b>🏠 पारिवारिक व्यवसाय</b></td>
+<td id="familyBusiness">-</td>
+</tr>
+
+<tr>
+<td><b>👨‍👩‍👧 परिवार के सदस्य</b></td>
+<td id="familyMembers">-</td>
+</tr>
+
+</table>
+<hr>
+
+<!-- ===========================
+Photo Gallery (up to 4 photos)
+=========================== -->
+
+<div class="profile-gallery">
+
+    <div class="gallery-header">
+        <div class="gallery-title">
+            <i class="fa-solid fa-images"></i>
+            फोटो गैलरी
+        </div>
+    </div>
+
+    <div class="gallery-preview">
+        <img id="galleryMainImg" src="../images/no-image.png" alt="Gallery Photo">
+        <div class="gallery-actions">
+            <span class="gallery-counter" id="galleryCounter">फोटो चुनें</span>
+        </div>
+    </div>
+
+    <div class="gallery-thumbnails" id="galleryThumbnails">
+        <!-- 4 photo slots injected by profile.js -->
+    </div>
+
+    <p style="margin-top:15px;font-size:13px;color:var(--gray);text-align:center;">
+        अधिकतम 4 फोटो अपलोड कर सकते हैं। किसी भी खाली बॉक्स पर क्लिक करके फोटो जोड़ें।
+    </p>
+
+</div>
+
+<hr>
+
+<!-- ===========================
+Action Buttons
+=========================== -->
+
+<div class="profile-action" align="center">
+
+<button type="button" id="interestBtn" onclick="handleSendInterest(this)">
+❤️ Interest
+</button>
+
+<button type="button" onclick="window.print()">
+🖨️ Print Profile
+</button>
+
+<button type="button" onclick="history.back()">
+⬅️ Back
+</button>
+
+</div>
+
+<hr>
+
+<!-- ===========================
+Navigation
+=========================== -->
+
+<div align="center">
+
+<p>
+
+🏠 <a href="index.html">Home</a>
+
+&nbsp; | &nbsp;
+
+🔍 <a href="search.html">Search</a>
+
+&nbsp; | &nbsp;
+
+🔐 <a href="login.html">Login</a>
+
+&nbsp; | &nbsp;
+
+📝 <a href="register.html">Register</a>
+
+</p>
+
+</div>
+
+<!-- ===========================
+Footer
+=========================== -->
+
+<footer class="footer">
+
+<h2>💍 SSJ Matrimony</h2>
+
+<p>सेठ-सेठिया (जैन) समाज विवाह परिचय</p>
+
+<p>© 2026 All Rights Reserved &nbsp;·&nbsp; <a href="admin-login.html" style="color:inherit;opacity:.65;font-size:12px;">Admin</a></p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="../js/firebase-init.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/ssj-data.js"></script>
+<script src="../js/profile.js"></script>
+
+<script>
+function handleSendInterest(btn){
+    const targetId = document.getElementById("profileId") ? document.getElementById("profileId").textContent.trim() : null;
+    if(!targetId){ return; }
+
+    const sent = JSON.parse(localStorage.getItem("sentInterests") || "[]");
+    if(!sent.includes(targetId)){
+        sent.push(targetId);
+        localStorage.setItem("sentInterests", JSON.stringify(sent));
+    }
+
+    // असली, दूसरे सदस्य तक पहुँचने वाली Interest — Firestore में save होती है
+    // ताकि वो सदस्य अपने डिवाइस पर लॉगिन करके इसे देख और स्वीकार/अस्वीकार कर सके।
+    try{
+        var mine = JSON.parse(localStorage.getItem('ssjProfile') || 'null');
+        if(mine && mine.profileId && typeof SSJ !== 'undefined' && SSJ.cloud){
+            SSJ.cloud.sendInterest(mine.profileId, targetId);
+        }
+    }catch(err){}
+
+    // इसी पेज पर तुरंत नंबर दिखा दें
+    const members = JSON.parse(localStorage.getItem("ssjMembers") || "[]");
+    const m = members.find(x => x.profileId === targetId);
+    if(m){
+        const mobileEl = document.getElementById("profileMobile");
+        const waEl = document.getElementById("profileWhatsapp");
+        if(mobileEl) mobileEl.textContent = m.mobile || "-";
+        if(waEl) waEl.textContent = m.whatsapp || m.mobile || "-";
+    }
+
+    btn.disabled = true;
+    btn.textContent = "✅ Interest भेज दी गई";
+    btn.style.opacity = "0.75";
+    btn.style.cursor = "not-allowed";
+
+    // 1.2 सेकंड बाद Search पेज पर भेज दें ताकि user confirmation देख सके
+    setTimeout(function(){
+        window.location.href = "search.html";
+    }, 1200);
+}
+</script>
+
+<script src="../js/lightbox.js"></script>
+</body>
+</html>

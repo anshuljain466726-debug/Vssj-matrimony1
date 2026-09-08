@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SSJ Matrimony - Admin Panel</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/variables.css">
+
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <link rel="stylesheet" href="../css/forms-compact.css">
+
+<link href="../css/lightbox.css" rel="stylesheet"/>
+<link href="../css/mobile-theme.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div class="admin-container">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>SSJ ADMIN</h2>
+
+        <hr>
+
+        <button onclick="showDashboard()">डैशबोर्ड</button>
+
+        <button onclick="showMembers()">सदस्य</button>
+
+        <button onclick="showPending()">लंबित पंजीकरण</button>
+
+        <button onclick="showPayments()">भुगतान</button>
+
+        <button onclick="showPremium()">प्रीमियम</button>
+
+        <button onclick="showAdvertisements()">विज्ञापन</button>
+
+        <button onclick="showReports()">रिपोर्ट</button>
+
+        <button onclick="showSettings()">सेटिंग्स</button>
+
+        <button onclick="showManageAdmins()" id="manageAdminsBtn" style="display:none;">👑 एडमिन प्रबंधित करें</button>
+
+        <a href="index.html" style="display:block;text-decoration:none;">
+        <button type="button">🌐 Website पर जाएं</button>
+        </a>
+
+        <button onclick="logout()">लॉगआउट</button>
+
+    </div>
+	
+
+    <!-- Main Area -->
+
+    <div class="main-content">
+
+        <h1>SSJ Matrimony एडमिन पैनल</h1>
+
+        <div id="pageContent">
+
+    <!-- Dashboard -->
+
+    <div class="dashboard" id="dashboardSection">
+
+        <div class="card">
+            <h3>कुल सदस्य</h3>
+            <h1 id="totalMembers">0</h1>
+        </div>
+
+        <div class="card">
+            <h3>लंबित पंजीकरण</h3>
+            <h1 id="pendingMembers">0</h1>
+        </div>
+
+        <div class="card">
+            <h3>स्वीकृत सदस्य</h3>
+            <h1 id="approvedMembers">0</h1>
+        </div>
+
+        <div class="card">
+            <h3>प्रीमियम सदस्य</h3>
+            <h1 id="premiumMembers">0</h1>
+        </div>
+
+        <div class="card">
+            <h3>विज्ञापन</h3>
+            <h1 id="advertisements">0</h1>
+        </div>
+
+        <div class="card">
+            <h3>विवाहित सदस्य</h3>
+            <h1 id="marriedMembers">0</h1>
+        </div>
+
+    </div>
+
+<!-- ===========================
+Members Management
+=========================== -->
+
+<hr>
+
+<h2 id="membersSection">👥 सदस्य प्रबंधन</h2>
+
+<input
+type="text"
+id="searchMember"
+placeholder="Profile ID, नाम या मोबाइल नंबर से खोजें">
+
+<table id="memberTable">
+
+<thead>
+
+<tr>
+
+<th>Profile ID</th>
+<th>नाम</th>
+<th>लिंग</th>
+<th>मोबाइल</th>
+<th>शहर</th>
+<th>पूरा पता</th>
+<th>स्थिति</th>
+<th>प्रीमियम</th>
+<th>कार्रवाई</th>
+
+</tr>
+
+</thead>
+
+<tbody id="memberTableBody">
+
+<tr><td colspan="9" align="center">लोड हो रहा है...</td></tr>
+
+</tbody>
+
+</table>
+
+<!-- ===========================
+Pending Registration
+=========================== -->
+
+<hr>
+
+<h2 id="pendingSection">⏳ Pending Registration</h2>
+
+<table id="pendingTable">
+
+<thead>
+<tr>
+<th>Profile ID</th>
+<th>Name</th>
+<th>Mobile</th>
+<th>City</th>
+<th>Registered On</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="pendingTableBody">
+<tr><td colspan="6" align="center">Loading...</td></tr>
+</tbody>
+
+</table>
+
+<!-- ===========================
+Payments
+=========================== -->
+
+<hr>
+
+<h2 id="paymentsSection">💰 Payments</h2>
+
+<table id="paymentTable">
+
+<thead>
+<tr>
+<th>Profile ID</th>
+<th>Name</th>
+<th>Amount</th>
+<th>Mode</th>
+<th>Status</th>
+<th>Date</th>
+</tr>
+</thead>
+
+<tbody id="paymentTableBody">
+<tr><td colspan="6" align="center">Loading...</td></tr>
+</tbody>
+
+</table>
+
+<!-- ===========================
+Premium Members
+=========================== -->
+
+<hr>
+
+<h2 id="premiumSection">💎 Premium Members</h2>
+
+<table id="premiumTable">
+
+<thead>
+<tr>
+<th>Profile ID</th>
+<th>Name</th>
+<th>Plan</th>
+<th>Status</th>
+<th>Applied On</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="premiumTableBody">
+<tr><td colspan="6" align="center">Loading...</td></tr>
+</tbody>
+
+</table>
+
+<!-- ===========================
+Advertisements
+=========================== -->
+
+<hr>
+
+<h2 id="advertisementsSection">📢 Advertisements</h2>
+
+<table id="adsTable">
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>City</th>
+<th>Plan</th>
+<th>Website</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody id="adsTableBody">
+<tr><td colspan="6" align="center">Loading...</td></tr>
+</tbody>
+
+</table>
+
+<!-- ===========================
+Reports
+=========================== -->
+
+<hr>
+
+<h2 id="reportsSection">📊 Reports</h2>
+
+<div id="reportsContent">
+<p>Loading...</p>
+</div>
+
+<!-- ===========================
+Settings
+=========================== -->
+
+<hr>
+
+<h2 id="settingsSectionTitle">⚙️ Settings</h2>
+
+<div id="settingsContent">
+<p>Loading...</p>
+</div>
+
+<!-- ===========================
+Manage Admins (sirf Super Admin)
+=========================== -->
+
+<hr>
+
+<div id="manageAdminsSection" style="display:none;">
+
+<h2>👑 Manage Admins</h2>
+
+<div class="card" style="max-width:480px;">
+<h3>➕ Naya Admin Banayein</h3>
+<label>पूरा नाम *</label>
+<input id="newAdminName" placeholder="पूरा नाम" type="text"/>
+<label>Username *</label>
+<input id="newAdminUsername" type="text"/>
+<label>Password *</label>
+<input id="newAdminPassword" type="text"/>
+<label>मोबाइल नंबर *</label>
+<input id="newAdminPhone" maxlength="10" placeholder="10 अंकों का मोबाइल नंबर" type="text"/>
+<label>शहर (City)</label>
+<input id="newAdminCity" placeholder="शहर" type="text"/>
+<label>पूरा पता</label>
+<textarea id="newAdminAddress" placeholder="पूरा पता" rows="3"></textarea>
+<label>आधार नंबर</label>
+<input id="newAdminAadhar" maxlength="12" placeholder="12 अंकों का आधार नंबर" type="text"/>
+<label>आधार कार्ड फोटो / प्रोफ़ाइल फोटो</label>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+<img id="newAdminPhotoPreview" alt="Photo preview" src="../images/user.png" style="width:70px;height:70px;border-radius:8px;object-fit:cover;border:2px solid var(--primary,#7A1230);"/>
+<input accept="image/*" id="newAdminPhoto" type="file"/>
+</div>
+<label>💰 Admin Fee (₹3,100) Transaction ID</label>
+<input id="newAdminFeeTxn" placeholder="₹3,100 Fee की Payment Transaction ID / UTR" type="text"/>
+<br/>
+<button onclick="createAdminSubmit()" type="button">📩 अनुरोध भेजें (Approval हेतु)</button>
+<p id="createAdminMsg"></p>
+</div>
+
+<br/>
+
+<h3>⏳ Pending Admin Requests</h3>
+<table border="1" cellpadding="8" cellspacing="0" width="100%">
+<thead>
+<tr>
+<th>नाम</th>
+<th>Username</th>
+<th>मोबाइल</th>
+<th>शहर</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody id="pendingAdminsTableBody">
+<tr><td colspan="6" align="center">Loading...</td></tr>
+</tbody>
+</table>
+
+<br/>
+
+<h3>✅ Approved Admins</h3>
+<table border="1" cellpadding="8" cellspacing="0" width="100%">
+<thead>
+<tr>
+<th>Admin ID</th>
+<th>नाम</th>
+<th>Username</th>
+<th>मोबाइल</th>
+<th>शहर</th>
+<th>Role</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody id="adminsTableBody">
+<tr><td colspan="7" align="center">Loading...</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+<!-- pageContent -->
+
+</div>
+<!-- main-content -->
+
+</div>
+<!-- admin-container -->
+
+
+<script src="../js/script.js"></script>
+
+<script>
+(function(){
+    const adminUser = JSON.parse(localStorage.getItem("adminUser") || "null");
+    if(!adminUser){
+        window.location.href = "admin-login.html";
+    }
+})();
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="../js/firebase-init.js"></script>
+<script src="../js/ssj-data.js"></script>
+<script src="../js/admin.js"></script>
+
+<script src="../js/lightbox.js"></script>
+</body>
+
+</html>

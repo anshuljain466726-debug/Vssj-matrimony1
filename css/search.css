@@ -1,0 +1,269 @@
+/*==================================================
+        SSJ MATRIMONY
+        SEARCH.CSS — Search page styling
+==================================================*/
+
+/*========== SEARCH HERO ==========*/
+
+.search-hero{
+    padding:70px 0 40px;
+    text-align:center;
+    background:var(--light);
+}
+
+.search-hero h1{
+    font-family:var(--font-display);
+    font-size:40px;
+    font-weight:400;
+    color:var(--primary-dark);
+    margin-bottom:14px;
+}
+
+.search-hero p{
+    max-width:640px;
+    margin:0 auto;
+    color:var(--gray);
+    font-size:16px;
+    line-height:1.7;
+}
+
+/*========== SEARCH FORM CARD ==========*/
+
+.search-section{
+    padding:40px 0 60px;
+}
+
+.search-card{
+    background:#fff;
+    border-radius:var(--radius-lg);
+    border:1px solid var(--border);
+    border-top:4px solid var(--gold);
+    padding:36px;
+    box-shadow:var(--shadow-lg);
+}
+
+.search-form{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px 20px;
+}
+
+.search-form .form-group:last-child{
+    display:flex;
+    align-items:flex-end;
+}
+
+.search-form .btn{
+    width:100%;
+    border:none;
+}
+
+/*========== SEARCH RESULTS ==========*/
+
+.search-result{
+    padding:20px 0 100px;
+    background:var(--ivory);
+}
+
+.profile-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:20px;
+}
+
+.profile-card{
+    background:#fff;
+    border-radius:var(--radius);
+    overflow:hidden;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+    position:relative;
+}
+
+.profile-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-lg);
+    border-color:var(--gold);
+}
+
+.profile-card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    display:block;
+}
+
+.profile-photo-link{
+    display:block;
+}
+
+.interest-status{
+    display:inline-flex;
+    align-items:center;
+    padding:9px 16px;
+    border-radius:var(--radius-sm,6px);
+    font-size:13.5px;
+    font-weight:600;
+}
+
+.interest-status.Pending{
+    background:var(--gold-pale,#F4EAD2);
+    color:var(--gold-dark,#8C6221);
+}
+
+.interest-status.Accepted{
+    background:#e9f9ef;
+    color:#1e8449;
+}
+
+.interest-status.Rejected{
+    background:#fdecea;
+    color:#c0392b;
+}
+
+.profile-top{
+    position:absolute;
+    top:12px;
+    left:12px;
+    right:12px;
+    display:flex;
+    justify-content:space-between;
+    z-index:2;
+}
+
+.profile-top .verified,
+.profile-top .premium{
+    font-size:11px;
+    font-weight:700;
+    padding:5px 12px;
+    border-radius:var(--radius-round);
+}
+
+.profile-top .verified{
+    background:var(--gradient-gold);
+    color:var(--primary-dark);
+}
+
+.profile-top .premium{
+    background:var(--primary-dark);
+    color:#fff;
+}
+
+.profile-content{
+    padding:22px 22px 26px;
+    text-align:center;
+}
+
+.profile-content h3{
+    font-family:var(--font-display);
+    font-weight:400;
+    font-size:19px;
+    color:var(--dark);
+    margin-bottom:10px;
+}
+
+.profile-content p{
+    color:var(--gray);
+    font-size:14px;
+    margin-bottom:5px;
+    text-align:left;
+}
+
+.profile-content .online{
+    color:#2e9e4e;
+    font-weight:600;
+    text-align:center;
+}
+
+.profile-btns{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+}
+
+.profile-btns .btn{
+    flex:1;
+    padding:11px 10px;
+    font-size:13px;
+    text-align:center;
+    border:none;
+}
+
+.profile-btns .btn-outline{
+    flex:1;
+    padding:9.5px 10px;
+    font-size:13px;
+    text-align:center;
+}
+
+.no-result{
+    grid-column:1 / -1;
+    text-align:center;
+    padding:60px 20px;
+    color:var(--gray);
+}
+
+/*========== RESPONSIVE ==========*/
+
+@media(max-width:991px){
+
+.search-form{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.search-hero h1{
+    font-size:32px;
+}
+
+}
+
+@media(max-width:768px){
+
+.search-hero{
+    padding:48px 0 30px;
+}
+
+.search-hero h1{
+    font-size:28px;
+}
+
+.search-hero p{
+    font-size:14.5px;
+}
+
+.search-card{
+    padding:24px 20px;
+}
+
+.profile-grid{
+    gap:20px;
+}
+
+}
+
+@media(max-width:576px){
+
+.search-form{
+    grid-template-columns:1fr;
+}
+
+.search-card{
+    padding:20px 16px;
+    border-radius:var(--radius);
+}
+
+.profile-card img{
+    height:230px;
+}
+
+.profile-content{
+    padding:18px 16px 22px;
+}
+
+.profile-btns{
+    flex-direction:column;
+}
+
+}

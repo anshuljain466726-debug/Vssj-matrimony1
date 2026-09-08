@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="hi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search Profile | SSJ Matrimony</title>
+<!-- CSS -->
+
+
+
+
+
+
+
+
+
+
+<link href="../images/favicon.png" rel="icon"/>
+<link href="../css/reset.css" rel="stylesheet"/>
+<link href="../css/variables.css" rel="stylesheet"/>
+<link href="../css/common.css" rel="stylesheet"/>
+<link href="../css/header.css" rel="stylesheet"/>
+<link href="../css/search.css" rel="stylesheet"/>
+<link href="../css/footer.css" rel="stylesheet"/>
+<link href="../css/forms-compact.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Hind:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+<link href="../css/lightbox.css" rel="stylesheet"/>
+<link href="../css/mobile-theme.css" rel="stylesheet"/>
+</head>
+<body><header class="header">
+<div class="container">
+<nav class="navbar">
+<a class="logo" href="index.html">
+<img alt="SSJ Matrimony Logo" src="../images/logo-crest.svg"/>
+<div class="logo-text">
+<h2>SSJ MATRIMONY</h2>
+<span>सच्चे रिश्ते, खुशहाल जीवन</span>
+</div>
+</a>
+<ul class="menu">
+<li><a href="index.html">होम</a></li>
+<li><a href="about.html">हमारे बारे में</a></li>
+<li><a class="active" href="search.html">सदस्य खोजें</a></li>
+<li><a href="welcome.html">सफलताएँ</a></li>
+<li><a href="our-team.html">हमारी टीम</a></li>
+<li><a href="contact.html">संपर्क करें</a></li>
+</ul>
+<div class="nav-actions">
+<a class="btn-outline btn-sm" href="login.html">लॉगिन</a>
+<a class="btn btn-sm" href="register.html">पंजीकरण करें</a>
+</div>
+<div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+</nav>
+</div>
+</header>
+<!-- ==========================================
+                TOP BAR
+========================================== -->
+<div class="top-bar">
+<div class="container">
+<div class="top-bar-item">
+<i class="fas fa-phone-volume"></i>
+<div>
+<strong>सहायता चाहिए?</strong>
+<span>+91 97852 29081</span>
+</div>
+</div>
+<div class="top-bar-item">
+<i class="fas fa-location-dot"></i>
+<div>
+<strong>सदस्य पंजीकरण</strong>
+<span>24x7 सहायता उपलब्ध</span>
+</div>
+</div>
+<div class="top-bar-secure">
+<i class="fas fa-shield-halved"></i>
+<div>
+<strong>100% सुरक्षित</strong>
+<span>आपकी जानकारी हमारे लिए सुरक्षित है</span>
+</div>
+</div>
+<div class="top-bar-item">
+<i class="fas fa-envelope"></i>
+<div>
+<strong>ई-मेल करें</strong>
+<span>info@ssjmatrimony.com</span>
+</div>
+</div>
+<div class="top-bar-item">
+<strong>हमारे साथ जुड़ें</strong>
+<div class="top-bar-social">
+<a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/919785229081" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= HEADER ================= -->
+
+<!--=========================================
+            SEARCH HERO
+==========================================-->
+<section class="search-hero">
+<div class="container">
+<h1>अपना जीवनसाथी खोजें</h1>
+<p>
+
+             श्री श्री माल सेठ-सेठिया  (जैन) समाज के सत्यापित प्रोफाइल में
+            अपनी पसंद का जीवनसाथी खोजें।
+
+        </p>
+</div>
+</section>
+<!--=========================================
+            SEARCH FORM
+==========================================-->
+<section class="search-section">
+<div class="container">
+<div class="search-card">
+<form class="search-form">
+<div class="form-group">
+<label>मैं खोज रहा हूँ</label>
+<select id="searchGender">
+<option value="">कोई भी</option>
+<option value="पुरुष">वर (पुरुष)</option>
+<option value="महिला">वधु (महिला)</option>
+</select>
+</div>
+<div class="form-group">
+<label>आयु</label>
+<select id="searchAge">
+<option value="">कोई भी</option>
+<option>18 - 25</option>
+<option>26 - 30</option>
+<option>31 - 35</option>
+<option>36 - 40</option>
+<option>40+</option>
+</select>
+</div>
+<div class="form-group">
+<label>राज्य</label>
+<input id="searchState" name="state" placeholder="अपना राज्य लिखें" type="text"/>
+</div>
+<div class="form-group">
+<label>शहर / गाव</label>
+<input id="searchCity" placeholder="अपना शहर / गाव  लिखें" type="text"/>
+</div>
+<div class="form-group">
+<label>शिक्षा</label>
+<select id="searchEducation">
+<option value="">कोई भी</option>
+<option>Graduate</option>
+<option>Post Graduate</option>
+<option>Engineer</option>
+<option>Doctor</option>
+<option>CA</option>
+</select>
+</div>
+<div class="form-group">
+<label>व्यवसाय</label>
+<input id="searchProfession" placeholder="Profession" type="text"/>
+</div>
+<div class="form-group">
+<button class="btn" id="searchBtn" type="button">
+
+                         Search Profile
+
+                    </button>
+</div>
+<div class="form-group">
+<button class="btn-outline" id="resetBtn" type="button">
+
+                         Reset
+
+                    </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!--=========================================
+            SEARCH RESULT
+==========================================-->
+<section class="search-result">
+<div class="container">
+<div class="section-title">
+<h2>Matching Profiles</h2>
+<p>आपके लिए चुने गए प्रोफाइल</p>
+</div>
+<div class="profile-grid" id="profileGrid">
+<!-- Profile 1 -->
+<div class="profile-card">
+<img alt="Profile" src="../images/profile1.jpg"/>
+<div class="profile-content">
+<h3>Profile ID : SSJ1001</h3>
+<p><strong>नाम :</strong> ********</p>
+<p><strong>आयु :</strong> 26 वर्ष</p>
+<p><strong>राज्य :</strong> राजस्थान</p>
+<p><strong>शहर :</strong> उदयपुर</p>
+<p><strong>शिक्षा :</strong> MBA</p>
+<p><strong>व्यवसाय :</strong> Business</p>
+<div class="profile-btns">
+<a class="btn" href="login.html">
+                        View Profile
+                    </a>
+<a class="btn-outline" href="login.html">
+                        <i class="fas fa-heart"></i> Interest
+                    </a>
+</div>
+</div>
+</div>
+<!-- Profile 2 -->
+<div class="profile-card">
+<img alt="Profile" src="../images/profile2.jpg"/>
+<div class="profile-content">
+<h3>Profile ID : SSJ1002</h3>
+<p><strong>नाम :</strong> ********</p>
+<p><strong>आयु :</strong> 24 वर्ष</p>
+<p><strong>राज्य :</strong> गुजरात</p>
+<p><strong>शहर :</strong> अहमदाबाद</p>
+<p><strong>शिक्षा :</strong> B.Tech</p>
+<p><strong>व्यवसाय :</strong> Engineer</p>
+<div class="profile-btns">
+<a class="btn" href="login.html">
+                        View Profile
+                    </a>
+<a class="btn-outline" href="login.html">
+                        <i class="fas fa-heart"></i> Interest
+                    </a>
+</div>
+</div>
+</div>
+<!-- Profile 3 -->
+<div class="profile-card">
+<img alt="Profile" src="../images/profile3.jpg"/>
+<div class="profile-content">
+<h3>Profile ID : SSJ1003</h3>
+<p><strong>नाम :</strong> ********</p>
+<p><strong>आयु :</strong> 29 वर्ष</p>
+<p><strong>राज्य :</strong> मध्य प्रदेश</p>
+<p><strong>शहर :</strong> इंदौर</p>
+<p><strong>शिक्षा :</strong> CA</p>
+<p><strong>व्यवसाय :</strong> Chartered Accountant</p>
+<div class="profile-btns">
+<a class="btn" href="login.html">
+                        View Profile
+                    </a>
+<a class="btn-outline" href="login.html">
+                        <i class="fas fa-heart"></i> Interest
+                    </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="../js/firebase-init.js"></script>
+<script src="../js/ssj-data.js"></script>
+<script src="../js/search.js"></script>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-box">
+<h3><i class="fas fa-heart"></i> SSJ Matrimony</h3>
+<p>भारत का विश्वसनीय जैन वैवाहिक पोर्टल। Verified Profiles के साथ अपना Perfect Life Partner खोजें।</p>
+</div>
+<div class="footer-box">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
+<li><a href="about.html"><i class="fas fa-circle-info"></i> About Us</a></li>
+<li><a href="search.html"><i class="fas fa-magnifying-glass"></i> Search Partner</a></li>
+<li><a href="register.html"><i class="fas fa-pen-to-square"></i> Register</a></li>
+<li><a href="login.html"><i class="fas fa-right-to-bracket"></i> Login</a></li>
+</ul>
+</div>
+<div class="footer-box">
+<h3>Legal</h3>
+<ul>
+<li><a href="privacy.html"><i class="fas fa-shield-halved"></i> Privacy Policy</a></li>
+<li><a href="terms.html"><i class="fas fa-scroll"></i> Terms &amp; Conditions</a></li>
+</ul>
+</div>
+<div class="footer-box">
+<h3>Contact</h3>
+<p><i class="fas fa-phone"></i> +91 9785229081</p>
+<p><i class="fas fa-envelope"></i> support@ssjmatrimony.in</p>
+<p><i class="fas fa-location-dot"></i> Rajasthan, India</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+<a href="https://wa.me/919785229081" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+</div>
+<hr/>
+<div class="copyright">© 2026 SSJ Matrimony | All Rights Reserved &nbsp;·&nbsp; <a href="admin-login.html" style="color:inherit;opacity:.65;font-size:12px;">Admin</a></div>
+</div>
+</footer>
+<a class="whatsapp" href="https://wa.me/919785229081" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</button><script src="../js/script.js"></script><script src="../js/lightbox.js"></script>
+</body>
+</html>
